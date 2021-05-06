@@ -1,0 +1,23 @@
+.dropdown-icon
+ { 
+ height: 80px;
+  width: 80px;
+
+}
+
+@media (min-width: 768px) {
+.dropdown {
+  display: none;
+
+}
+}
+
+@media (max-width: 768px) {
+.dropdown {
+    display: block;
+}
+}
+
+.dropdown-icon:after {
+    display: none;
+}
