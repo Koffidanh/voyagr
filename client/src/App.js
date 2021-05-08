@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Member from "./pages/Member";
+import Dashboard from "./pages/Dashboard";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" component={Login} exact />
         <Route path="/signup" component={Signup} />
         <Route path="/member" component={Member} />
+        <Route path="/dashboard" component={Dashboard} />
       </Switch>
     </Router >
   );

@@ -14,6 +14,9 @@ export const Navbar = () => {
                     <NavLink to="/login" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
                         Login
                     </NavLink>
+                    <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
+                        Dashboard
+                    </NavLink>
                 </NavMenu>
                 <NavBtn>
                     <NavBtnLink to="/signup">Sign Up</NavBtnLink>

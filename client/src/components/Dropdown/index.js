@@ -18,6 +18,7 @@ const BurgerMenu = (props) => {
                 <DropdownItem href="/member">Home</DropdownItem>
                 <DropdownItem href="/">Login</DropdownItem>
                 <DropdownItem href="/signup">Signup</DropdownItem>
+                <DropdownItem href="/dashboard">Dashboard</DropdownItem>
             </DropdownMenu>
         </Dropdown >
     );
