@@ -9,9 +9,8 @@ import Map from "../../components/Map"
 function DashboardPage() {
   return (
     <div>
-      <Container style={{ marginTop: 30 }}>
+      <Container style={{ margin: 0, padding: 0}}>
         <Map />
-        <h1>Dashboard</h1>
         <Card />
       </Container>
     </div>
