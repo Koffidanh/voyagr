@@ -4,7 +4,9 @@ const passport = require("passport")
 
 
 
-router.use("/login", passport.authenticate("local"))
+router.post("/login", passport.authenticate("local"), (req, res) => {
+    res.json(req.user)
+})
 
 
 

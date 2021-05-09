@@ -2,10 +2,12 @@ import React from "react";
 import "./style.css";
 import Container from "../../components/Container";
 // import Card from "../../components/Card";
-import Navbar from "../../components/Navbar";
+// import Navbar from "../../components/Navbar";
 import { Input, FormBtn } from "../../components/Form";
+// import { json } from "express";
 
 function SignupPage() {
+
   return (
     <div>
       <Container style={{ marginTop: 30 }}>
@@ -13,12 +15,10 @@ function SignupPage() {
         <form>
           <label> Email:</label>
           <Input
-            onChange={() => { }}
             name="email"
           />
           <label> Password:</label>
           <Input
-            onChange={() => { }}
             name="password"
           />
           <FormBtn
