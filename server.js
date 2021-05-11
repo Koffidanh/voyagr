@@ -1,6 +1,8 @@
 const express = require("express");
 const session = require("express-session");
 const passport = require("./config/passport");
+// const passportlocal =  require("passport-local").Strategy;
+// const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
