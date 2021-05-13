@@ -7,6 +7,7 @@
 
   ## Table of Contents 
   * [Description](#Description)
+  * [Deployment](#Deployment)
   * [Project URL](#Project-URL)
   * [Mock-up](#Mock-up)
   * [Usage](#Usage)
