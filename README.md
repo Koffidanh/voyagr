@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Voyagr
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  [![github-follow](https://img.shields.io/github/followers/johnsonr84?label=Follow&logoColor=lightgrey&style=social)](https://github.com/Kayvonk)
+  [![project-languages-used](https://img.shields.io/github/languages/count/johnsonr84/readme-generator?color=orange)](https://github.com/Kayvonk/voyagr)
+  [![project-top-language](https://img.shields.io/github/languages/top/johnsonr84/readme-generator?color=yellow)](https://github.com/Kayvonk/voyagr)
+  [![license](https://img.shields.io/badge/license-mit-brightgreen.svg)](https://choosealicense.com/licenses/mit/)
 
-## Available Scripts
+  ## Table of Contents 
+  * [Description](#Description)
+  * [Project URL](#Project-URL)
+  * [Mock-up](#Mock-up)
+  * [Usage](#Usage)
+  * [Credits](#Credits)
+  * [License](#License)
+  * [Features](#Features)
+  * [Tests](#Tests)
+  * [Resources](#Resources)
+  * [Contact](#Contact)
+  * [Designed and built by](#Designed-and-built-by)
+  #
+  
+  ## Description 
+   Voyagr is a mobile first full stack application (MERN) that features a user dashboard highlighted by a world map that enables the user to document their journey around this amazing planet with pin markers, simply put Voyagr is a digital cork board pin map.
 
-In the project directory, you can run:
+  ## Deployment
+  Comming Soon!
 
-### `yarn start`
+  ## Project URL
+  https://github.com/Kayvonk/voyagr
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  ## Mock-Ups
+  <table>
+  <tr>
+    <td>Voyagr App Dashboard</td>
+  </tr>
+  <tr>
+    <td><img src="client/public/dashboard.png" height=400 alt="screenshot of Voyagr page"></td>
+  </tr>
+ </table>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  ## Installation 
+  No installations required at this time 
 
-### `yarn test`
+  ## Usage 
+  It’s simple. Create an account -> login -> and start pinning your journeys to your own personal world map including photos, a description.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ## Credits 
+  Kayvon Kazemini, Robert Johnson, Koffi Danhounsrou
 
-### `yarn build`
+  ## License 
+  This project is [mit](https://choosealicense.com/licenses/mit/) licensed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  ## Features
+  Coming soon!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ## Tests
+  `yarn test`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  Launches the test runner in the interactive watch mode.\
+  See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn eject`
+  ## Resources
+  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  * [Inquirer](https://www.npmjs.com/package/inquirer) 
+  * [Mapbox](https://www.mapbox.com/)
+  * [React-Map-GL](https://visgl.github.io/react-map-gl/)
+  * [React-Hook-Form](https://react-hook-form.com/)
+  * [Heroku](https://www.heroku.com/)
+  * [MongoDB](https://www.mongodb.com/)
+  * [Passport](http://www.passportjs.org/)
+  * [Choose a License](https://choosealicense.com/)
+  * [Badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+  * [shields.io](https://shields.io/)
+  * [YouTube](https://www.youtube.com/)
+  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  ## Contact
+  Emails: 
+  * kayvonk@gmail.com
+  * robertcjohnson1984@gmail.com 
+  * koffi.danh@gmail.com
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  ## Designed and built by
+  Author(s): 
+  * Kayvon Kazemini (https://github.com/Kayvonk) 
+  * Rob Johnson (https://github.com/johnsonr84/) 
+  * Koffi Danhounsrou (https://github.com/Koffidanh)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
