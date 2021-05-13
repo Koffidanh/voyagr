@@ -3,7 +3,7 @@ import "./style.css";
 import Container from "../../components/Container";
 import Card from "../../components/Card";
 // import Navbar from "../../components/Navbar";
-import Map from "../../components/Map"
+import Map from "../../Map"
 
 
 function DashboardPage() {
