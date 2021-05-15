@@ -11,14 +11,13 @@ const BurgerMenu = (props) => {
 
     return (
         <Dropdown className="dropdown" isOpen={dropdownOpen} toggle={toggle} size="lg">
-            <DropdownToggle className="dropdown-icon" >
-                <FontAwesomeIcon icon={faBars} />
+            <DropdownToggle color="343A40" className="dropdown-icon" >
+                <FontAwesomeIcon icon={faBars} size="lg" />
             </DropdownToggle>
-            <DropdownMenu>
-                <DropdownItem href="/member">Home</DropdownItem>
-                <DropdownItem href="/">Login</DropdownItem>
-                <DropdownItem href="/signup">Signup</DropdownItem>
+            <DropdownMenu right>
                 <DropdownItem href="/dashboard">Dashboard</DropdownItem>
+                <DropdownItem href="/settings">Settings</DropdownItem>
+                <DropdownItem href="/">Logout</DropdownItem>
             </DropdownMenu>
         </Dropdown >
     );

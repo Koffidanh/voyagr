@@ -1,0 +1,78 @@
+.messageSender {
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, .75);
+    width: 100%;
+      padding: 10px;
+    margin-top: 20px;
+    border-radius: 33px;
+}
+
+.messageSender-top {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    padding: 20px;
+  }
+
+.messageSender-top > form {
+    margin-left: 10px;
+    background-color: rgb(240, 240, 240);
+    padding: 10px;
+    border-radius: 500px;
+    width: 80%;
+}
+
+.messageSender-top > form > input {
+
+    border:none;
+    background-color: transparent;
+    outline-width: 0;
+}
+
+.messageSender-top > form > button  {
+display:  none;
+}
+
+.messageSender-bottom {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.fa-user-circle {
+     color: rgb(190, 190, 190);
+}
+
+.fa-images {
+  color: rgb(0, 163, 204);
+}
+
+.fa-video {
+  color: rgb(224, 9, 9);
+}
+
+.fa-map-pin {
+  color: rgb(255, 123, 0);
+}
+
+.fa-grin-alt {
+  color: rgba(221, 199, 0, 0.986);
+}
+
+.messageSender-icon {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  align-items: center;
+  display: flex;
+  color: white;
+  padding: 20px;
+}
+
+.messageSender-icon:hover {
+background-color: grey;
+border-radius: 20px;
+cursor: pointer;
+}

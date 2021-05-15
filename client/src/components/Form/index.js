@@ -1,7 +1,7 @@
 import React from "react";
+import "./style.css"
 
 // This file exports the Input, TextArea, and FormBtn components
-
 export function Input(props) {
     return (
         <div className="form-group">
@@ -18,9 +18,17 @@ export function TextArea(props) {
     );
 }
 
-export function FormBtn(props) {
+export function LoginBtn(props) {
     return (
-        <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
+        <button {...props} className="loginBtn btn btn-info">
+            {props.children}
+        </button>
+    );
+}
+
+export function SignupBtn(props) {
+    return (
+        <button {...props} className="loginBtn btn btn-success">
             {props.children}
         </button>
     );

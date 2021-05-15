@@ -2,27 +2,31 @@ import React from 'react'
 import { Nav, NavLink, NavMenu, NavBtn, NavBtnLink } from "./NavbarElements"
 import BurgerMenu from "../Dropdown"
 import Search from "../Search"
+import { faHome } from '@fortawesome/free-solid-svg-icons'
+import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
+import { faCog } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Navbar = () => {
     return (
         <>
             <Nav>
-                <BurgerMenu />
                 <Search />
                 <NavMenu>
-                    <NavLink to="/member" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
-                        Home
-                    </NavLink>
-                    <NavLink to="/login" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
-                        Login
-                    </NavLink>
                     <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
-                        Dashboard
+                        <FontAwesomeIcon icon={faHome} size="lg" />
+                    </NavLink>
+                    <NavLink to="/friends" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
+                        <FontAwesomeIcon icon={faUserFriends} size="lg" />
+                    </NavLink>
+                    <NavLink to="/settings" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
+                        <FontAwesomeIcon icon={faCog} size="lg" />
                     </NavLink>
                 </NavMenu>
-                <NavBtn>
-                    <NavBtnLink to="/signup">Sign Up</NavBtnLink>
-                </NavBtn>
+                {/* <NavBtn>
+                    <NavBtnLink to="/signup">Logout</NavBtnLink>
+                </NavBtn> */}
+                <BurgerMenu />
 
             </Nav>
         </>
