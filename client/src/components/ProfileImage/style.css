@@ -1,0 +1,17 @@
+.profileImage {
+border: 1px solid white;
+/* text-align: center; */
+margin: 0 auto;
+z-index: 1000 !important;
+};
+.imageDiv {
+
+};
+/* .profileImage {
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+  } */

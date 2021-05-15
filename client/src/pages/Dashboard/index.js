@@ -7,13 +7,21 @@ import Map from "../../Map"
 import MessageSender from "../../components/MessageSender"
 import Feed from "../../components/Feed";
 import Post from "../../components/Post";
+import ProfileImage from "../../components/ProfileImage";
 
 function DashboardPage() {
   return (
     <div>
       <Navbar />
-      <Container style={{ margin: 0, padding: 0 }}>
+      <Container style={{ margin: 0, padding: 0 , zIndex:"-1000"}}>
         <Map />
+      </Container>
+      <Container style={{display: 'flex',  justifyContent:'center', alignItems:'center', marginTop:-10, zIndex:"1000"}}>
+        <ProfileImage
+
+
+          avatarImage="https://pbs.twimg.com/profile_images/1148822091682045952/vR2t82Hy.jpg"
+        />
       </Container>
       <Feed>
         <MessageSender />
