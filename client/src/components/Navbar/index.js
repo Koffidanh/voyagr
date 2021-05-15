@@ -1,12 +1,14 @@
 import React from 'react'
 import { Nav, NavLink, NavMenu, NavBtn, NavBtnLink } from "./NavbarElements"
 import BurgerMenu from "../Dropdown"
+import Search from "../Search"
 
 export const Navbar = () => {
     return (
         <>
             <Nav>
                 <BurgerMenu />
+                <Search />
                 <NavMenu>
                     <NavLink to="/member" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
                         Home
