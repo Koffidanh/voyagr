@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./style.css";
-import Container from "../../components/Container";
+// import Container from "../../components/Container";
+import Card from "../../components/FormCard";
 import { Input, LoginBtn, SignupBtn } from "../../components/Form";
 import { Link } from "react-router-dom";
+
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -23,7 +25,8 @@ function LoginPage() {
 
   return (
     <div>
-      <Container style={{ marginTop: 100 }}>
+
+      <Card style={{ marginTop: 100 }}>
         <h2>Log in</h2>
         <form onSubmit={onSubmit}>
           <label> Email:</label>
@@ -41,11 +44,11 @@ function LoginPage() {
           </LoginBtn>
         </form>
 
-        <h6>Don't Have an Account?</h6>
+        <h6 className="form-info">Don't Have an Account?</h6>
         <Link to="/signup">
           <SignupBtn> Sign up </SignupBtn>
         </Link>
-      </Container >
+      </Card >
     </div >
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
-import Container from "../../components/Container";
-// import Card from "../../components/Card";
+// import Container from "../../components/Container";
+import Card from "../../components/FormCard";
 // import Navbar from "../../components/Navbar";
 import { Input, LoginBtn, SignupBtn } from "../../components/Form";
 // import { json } from "express";
@@ -24,7 +24,7 @@ const RegisterUser = () => {
 
   return (
     <div>
-      <Container style={{ marginTop: 100 }}>
+      <Card style={{ marginTop: 100 }}>
         <h2>Sign up</h2>
         <form onSubmit={register}>
           <label> Email:</label>
@@ -42,11 +42,11 @@ const RegisterUser = () => {
               </SignupBtn>
         </form>
 
-        <h6>Already have an account?</h6>
+        <h6 className="form-info">Already have an account?</h6>
         <Link to="/login">
           <LoginBtn> Log In </LoginBtn>
         </Link>
-      </Container>
+      </Card>
     </div>
   );
 }

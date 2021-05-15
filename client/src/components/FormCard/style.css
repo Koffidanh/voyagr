@@ -1,4 +1,11 @@
 .card {
+    box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, .75);
+    width: fit-content;
+    padding: 20px;
+}
+
+
+/* .card {
   background-size: cover;
   background-position: center;
   background-clip: content-box;
@@ -16,4 +23,4 @@
   position: absolute;
   left: 25%;
   top: 25%;
-}
+} */
