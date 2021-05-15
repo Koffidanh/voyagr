@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { newPosts } from '../../API';
 
-const PostForm = ({ location, onCLose }) => {
+const PostForm = ({ location, onClose }) => {
     const [setLoading] = useState(false);
+    const [error, setError] = useState('');
     const { register, handleSubmit } = useForm();
 
     const onSubmit = async (data) => {
@@ -12,15 +13,18 @@ const PostForm = ({ location, onCLose }) => {
             data.latitude = location.latitude;
             data.longitude = location.longitude;
             await newPosts(data);
-            // onClose();
+            onClose();
         } catch (error) {
             console.log(error);
+            setError(error.message);
+            setLoading(false);
         }
     }
 
     return (
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
         <form onSubmit={handleSubmit(onSubmit)} className="new-post-form">
+             { error ? <h3 className="error">{error}</h3> : null}
             {/* Title of Post */}
             <label htmlFor="title">Title</label>
             <input name="title" required ref={register} />
