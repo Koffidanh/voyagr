@@ -3,9 +3,11 @@ import "./style.css";
 import Container from "../../components/Container";
 // import Card from "../../components/Card";
 // import Navbar from "../../components/Navbar";
-import { Input, FormBtn } from "../../components/Form";
+import { Input, LoginBtn, SignupBtn } from "../../components/Form";
 // import { json } from "express";
 import axios from 'axios'
+import { Link } from "react-router-dom";
+
 
 const RegisterUser = () => {
   const [email, setEmail] = useState("");
@@ -22,7 +24,7 @@ const RegisterUser = () => {
 
   return (
     <div>
-      <Container style={{ marginTop: 30 }}>
+      <Container style={{ marginTop: 100 }}>
         <h2>Sign up</h2>
         <form onSubmit={register}>
           <label> Email:</label>
@@ -35,11 +37,15 @@ const RegisterUser = () => {
             onChange={(e) => setPassword(e.target.value)}
             name="password"
           />
-          <FormBtn>
-            Submit
-              </FormBtn>
+          <SignupBtn>
+            Create Account
+              </SignupBtn>
         </form>
 
+        <h6>Already have an account?</h6>
+        <Link to="/login">
+          <LoginBtn> Log In </LoginBtn>
+        </Link>
       </Container>
     </div>
   );

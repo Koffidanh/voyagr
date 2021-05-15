@@ -3,19 +3,16 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import './App.css';
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import Member from "./pages/Member";
 import Dashboard from "./pages/Dashboard";
-import Navbar from "./components/Navbar";
+import "./App.css";
 
 function App() {
   return (
     <Router>
-      <Navbar />
       <Switch>
         <Route path="/" component={Login} exact />
         <Route path="/login" component={Login} exact />
         <Route path="/signup" component={Signup} />
-        <Route path="/member" component={Member} />
         <Route path="/dashboard" component={Dashboard} />
       </Switch>
     </Router >

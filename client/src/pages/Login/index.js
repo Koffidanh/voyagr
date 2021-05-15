@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./style.css";
 import Container from "../../components/Container";
-// import Card from "../../components/Card";
-// import Navbar from "../../components/Navbar";
-import { Input, FormBtn } from "../../components/Form";
-
+import { Input, LoginBtn, SignupBtn } from "../../components/Form";
+import { Link } from "react-router-dom";
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -25,7 +23,7 @@ function LoginPage() {
 
   return (
     <div>
-      <Container style={{ marginTop: 30 }}>
+      <Container style={{ marginTop: 100 }}>
         <h2>Log in</h2>
         <form onSubmit={onSubmit}>
           <label> Email:</label>
@@ -38,14 +36,17 @@ function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
             name="password"
           />
-          <FormBtn>
-            Submit
-              </FormBtn>
+          <LoginBtn>
+            Log In
+          </LoginBtn>
         </form>
 
-      </Container>
-
-    </div>
+        <h6>Don't Have an Account?</h6>
+        <Link to="/signup">
+          <SignupBtn> Sign up </SignupBtn>
+        </Link>
+      </Container >
+    </div >
   );
 }
 
