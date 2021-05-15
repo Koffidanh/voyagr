@@ -2,6 +2,7 @@ const { Router } = require('Express');
 const RateLimit = require('express-rate-limit');
 const MongoStore = require('rate-limit-mongo');
 const newPost = require('..modals/newPosts');
+const postsController = require("../../controllers/postsController");
 
 // pulls password from the env file will need more secure option
 const {
@@ -47,5 +48,17 @@ router.posts('/', limiter, async (req, res, next) => {
         next(error);
     }
 });
+
+// Matches with "/api/posts"
+router.route("/")
+  .get(postsController.findAll)
+  .post(postsController.create);
+
+// Matches with "/api/posts/:id"
+router
+  .route("/:id")
+  .get(postsController.findById)
+  .put(postsController.update)
+  .delete(postsController.remove);
 
 module.exports = router;

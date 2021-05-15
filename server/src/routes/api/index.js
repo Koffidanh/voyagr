@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const passport = require("passport")
-const User = require('../../models/users')
+const User = require('../../users')
 const bcrypt = require("bcrypt");
+
 
 router.post("/login", passport.authenticate("local"), (req, res) => {
     res.json(req.user)
@@ -35,9 +36,9 @@ router.get('/user', (req, res, next) => {
     }
 })
 
-// const postRoutes = require("./posts");
+const postRoutes = require("./posts");
 
-// // Post routes
-// router.use("/posts", postRoutes);
+// Post routes
+router.use("/posts", postRoutes);
 
 module.exports = router;
