@@ -3,6 +3,7 @@ const RateLimit = require('express-rate-limit');
 const MongoStore = require('rate-limit-mongo');
 const newPost = require('..modals/newPosts');
 const postsController = require("../../controllers/postsController");
+const checkjwt = require('../../middleware/checkjwt')
 
 // pulls password from the env file will need more secure option
 const {
@@ -14,12 +15,12 @@ const router = Router();
 
 const rateLimitDelay = 10 * 1000; // 10 second delay
 const limiter = new RateLimit({
-  store: new MongoStore({
-    uri: DATABASE_URL,
-    expireTimeMs: rateLimitDelay,
-  }),
-  max: 1,
-  windowMs: rateLimitDelay
+    store: new MongoStore({
+        uri: DATABASE_URL,
+        expireTimeMs: rateLimitDelay,
+    }),
+    max: 1,
+    windowMs: rateLimitDelay
 });
 
 router.get('/', async (req, res, next) => {
@@ -32,7 +33,7 @@ router.get('/', async (req, res, next) => {
 });
 
 // The PASSWORD will later be router to each individual user password when signing up
-router.posts('/', limiter, async (req, res, next) => {
+router.posts('/', limiter, checkjwt, async (req, res, next) => {
     try {
         if (req.get('USER-PASS') !== PASSWORD) {
             res.status(401);
@@ -51,14 +52,14 @@ router.posts('/', limiter, async (req, res, next) => {
 
 // Matches with "/api/posts"
 router.route("/")
-  .get(postsController.findAll)
-  .post(postsController.create);
+    .get(postsController.findAll)
+    .post(postsController.create);
 
 // Matches with "/api/posts/:id"
 router
-  .route("/:id")
-  .get(postsController.findById)
-  .put(postsController.update)
-  .delete(postsController.remove);
+    .route("/:id")
+    .get(postsController.findById)
+    .put(postsController.update)
+    .delete(postsController.remove);
 
 module.exports = router;
