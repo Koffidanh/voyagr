@@ -34,7 +34,7 @@ function LoginPage() {
     <div>
       <Nav>
         <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
-          {/* <LoginButton /> */}
+          <LoginButton />
           {/* <LogoutButton /> */}
         </NavLink>
 
