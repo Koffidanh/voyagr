@@ -8,18 +8,25 @@ import MessageSender from "../../components/MessageSender"
 import Feed from "../../components/Feed";
 import Post from "../../components/Post";
 import ProfileImage from "../../components/ProfileImage";
+import { useAuth0 } from '@auth0/auth0-react';
+import NavbarLogin from "../../components/NavbarLogin";
 
 function DashboardPage() {
+
+
   return (
     <div>
       <Navbar />
-      <Container style={{ margin: 0, padding: 0 , zIndex:"-1000" }}>
+      <NavbarLogin />
+      <Container style={{ margin: 0, padding: 0, zIndex: "-1000" }}>
         <Map />
       </Container>
-      <Container style={{display: 'flex',  justifyContent:'center', alignItems:'center', marginTop:-10, zIndex:"1000"}}>
+      <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 10, zIndex: "1000" }}>
         <ProfileImage
           avatarImage="https://pbs.twimg.com/profile_images/1148822091682045952/vR2t82Hy.jpg"
         />
+      </Container>
+      <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 5, zIndex: "1000" }}>
       </Container>
       <Feed>
         <MessageSender />

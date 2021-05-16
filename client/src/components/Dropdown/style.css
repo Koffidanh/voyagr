@@ -1,3 +1,15 @@
+@media (min-width: 768px) {
+.dropdownDiv {
+    margin-left: 10rem;
+}
+}
+
+@media (max-width: 768px) {
+.dropdownDiv {
+     margin-left: 0;
+}
+}
+
 .dropdown-icon
  { 
   height: 80px;

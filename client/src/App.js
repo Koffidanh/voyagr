@@ -6,14 +6,15 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import "./App.css";
 
+
 function App() {
+
   return (
     <Router>
       <Switch>
-        <Route path="/" component={Login} exact />
+        <Route path="/" component={Dashboard} exact />
         <Route path="/login" component={Login} exact />
         <Route path="/signup" component={Signup} />
-        <Route path="/dashboard" component={Dashboard} />
       </Switch>
     </Router >
   );
