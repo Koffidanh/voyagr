@@ -1,6 +1,5 @@
 const express = require("express");
 const session = require("express-session");
-const passport = require("./config/passport");
 const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
@@ -44,8 +43,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 app.use(session({ secret: "voyagr", resave: true, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
 
 // Add routes, both API and view
 app.use(routes);

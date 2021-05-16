@@ -1,22 +1,25 @@
 import React from 'react'
-import { Nav, NavLink, NavMenu, NavBtn, NavBtnLink } from "./NavbarElements"
+import { Nav, NavBtn, NavBtnLink } from "./NavbarElements"
+// import { Nav, NavLink, NavMenu, NavBtn, NavBtnLink } from "./NavbarElements"
 import BurgerMenu from "../Dropdown"
 import Search from "../Search"
-import { faHome } from '@fortawesome/free-solid-svg-icons'
-import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
-import { faCog } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faHome } from '@fortawesome/free-solid-svg-icons'
+// import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
+// import { faCog } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useAuth0 } from '@auth0/auth0-react';
+import LoginButton from '../LoginButton';
 
 
-export const Navbar = () => {
-    const { logout, isAuthenticated } = useAuth0();
+export const NavbarLogin = () => {
+    const { isAuthenticated } = useAuth0();
+
     return (
-        isAuthenticated && (
+        !isAuthenticated && (
             <>
                 <Nav>
                     <Search />
-                    <NavMenu>
+                    {/* <NavMenu>
                         <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
                             <FontAwesomeIcon icon={faHome} size="lg" />
                         </NavLink>
@@ -26,10 +29,11 @@ export const Navbar = () => {
                         <NavLink to="/settings" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
                             <FontAwesomeIcon icon={faCog} size="lg" />
                         </NavLink>
-                    </NavMenu>
-                    {/* <NavBtn>
-                        <NavBtnLink to="/signup">Log In</NavBtnLink>
-                    </NavBtn> */}
+                    </NavMenu> */}
+                    <NavBtn>
+                        <LoginButton />
+                        {/* <NavBtnLink onClick={() => loginWithRedirect()}>Log In</NavBtnLink> */}
+                    </NavBtn>
                     <BurgerMenu />
 
                 </Nav>
@@ -38,4 +42,4 @@ export const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default NavbarLogin;
