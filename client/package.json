@@ -19,6 +19,7 @@
     "mapbox-gl": "^2.2.0",
     "nodemon": "^1.18.7",
     "react": "^17.0.2",
+    "react-background-slider": "^2.0.0",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.5.2",
     "react-icons": "^4.2.0",
