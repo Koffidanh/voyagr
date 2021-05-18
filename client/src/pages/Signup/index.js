@@ -36,28 +36,14 @@ const RegisterUser = () => {
   return (
     <div>
        <NavbarSignup sticky="top"/>
-        <Card style={{ marginTop: 100, marginBottom: 100, opacity: "90%" }}>
-        <BackgroundSlider
+       <BackgroundSlider
   images={[image1, image2, image3, image4, image5, image6, image7]}
   duration={3} transition={2} style={{maxHeight: '200px'}}/>
+        <Card style={{ marginTop: 100, marginBottom: 100, opacity: "90%" }}>
+      
           <h2>Sign up</h2>
-          <form className="sign-up-form"
-          // onSubmit={register}
-          >
-            <label> Email:</label>
-            <Input
-              // onChange={(e) => setEmail(e.target.value)}
-              name="email"
-            />
-            <label> Password:</label>
-            <Input
-              // onChange={(e) => setPassword(e.target.value)}
-              name="password"
-            />
-            <SignupBtn>
-              Create Account
-              </SignupBtn>
-          </form>
+      
+
 
           <h6 className="form-info">Already have an account?</h6>
           <Link to="/login">
