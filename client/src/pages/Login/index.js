@@ -9,6 +9,8 @@ import { Nav, NavLink } from "../../components/Navbar/NavbarElements"
 import LoginButton from '../../components/LoginButton';
 // import LogoutButton from '../../components/LogoutButton';
 import { useAuth0 } from '@auth0/auth0-react';
+import SignupButton from "../../components/SignupButton";
+
 
 function LoginPage() {
   const { isLoading } = useAuth0();
@@ -35,6 +37,7 @@ function LoginPage() {
       <Nav>
         <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
           <LoginButton />
+          <SignupButton />
           {/* <LogoutButton /> */}
         </NavLink>
 

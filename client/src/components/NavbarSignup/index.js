@@ -9,15 +9,16 @@ import "./style.css";
 // import { faCog } from '@fortawesome/free-solid-svg-icons'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import LoginButton from '../LoginButton';
+import SignupButton from '../SignupButton';
 
 
 export const NavbarSignup = () => {
 
     return (
-            <>
-                <Nav>
-                    <h1>Voyagr Logo</h1>
-                    {/* <NavMenu>
+        <>
+            <Nav>
+                <h1>Voyagr Logo</h1>
+                {/* <NavMenu>
                         <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
                             <FontAwesomeIcon icon={faHome} size="lg" />
                         </NavLink>
@@ -28,14 +29,15 @@ export const NavbarSignup = () => {
                             <FontAwesomeIcon icon={faCog} size="lg" />
                         </NavLink>
                     </NavMenu> */}
-                    <NavBtn>
-                        <LoginButton />
-                        {/* <NavBtnLink onClick={() => loginWithRedirect()}>Log In</NavBtnLink> */}
-                    </NavBtn>
-                    <BurgerMenu />
+                <NavBtn>
+                    <LoginButton />
+                    <SignupButton />
+                    {/* <NavBtnLink onClick={() => loginWithRedirect()}>Log In</NavBtnLink> */}
+                </NavBtn>
+                {/* <BurgerMenu /> */}
 
-                </Nav>
-            </>
+            </Nav>
+        </>
     )
 }
 

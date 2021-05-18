@@ -35,24 +35,24 @@ const RegisterUser = () => {
 
   return (
     <div>
-       <NavbarSignup sticky="top"/>
-       <BackgroundSlider
-  images={[image1, image2, image3, image4, image5, image6, image7]}
-  duration={3} transition={2} style={{maxHeight: '200px'}}/>
-        <Card style={{ marginTop: 100, marginBottom: 100, opacity: "90%" }}>
-      
-          <h2>Sign up</h2>
-      
+      <NavbarSignup sticky="top" />
+      <BackgroundSlider
+        images={[image1, image2, image3, image4, image5, image6, image7]}
+        duration={3} transition={2} style={{ maxHeight: '200px' }} />
+      {/* <Card style={{ marginTop: 100, marginBottom: 100, opacity: "90%" }}>
+
+        <h2>Sign up</h2>
 
 
-          <h6 className="form-info">Already have an account?</h6>
-          <Link to="/login">
-            <LoginBtn> Log In </LoginBtn>
-          </Link>
-        </Card>
-        <Footer />
-    </div> 
-      
+
+        <h6 className="form-info">Already have an account?</h6>
+        <Link to="/login">
+          <LoginBtn> Log In </LoginBtn>
+        </Link>
+      </Card> */}
+      <Footer />
+    </div>
+
   );
 }
 

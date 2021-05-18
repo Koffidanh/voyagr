@@ -1,17 +1,17 @@
 .loginBtn {
-    border-radius:4px;
-background: #256ce1;
-padding: 10px 22px;
+background: none!important;
+ border: none !important;  
 color: #fff;
+margin: auto !important;
 border: none;
 outline: none;
 cursor: pointer;
-transition: all 0.2s ease-in-out;
-text-decoration: none;
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+/* transition: all 0.2s ease-in-out; */
 }
 
-.loginBtn:hover {
+/* .loginBtn:hover {
     transition: all 0.2s ease-in-out;
     background: #fff;
-    color: #010606;
-}
+    color: #fff;
+} */
