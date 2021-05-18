@@ -3,7 +3,7 @@ const { Schema }  = mongoose;
 
 const requiredNumber = { type: Number, required: true, };
 
-const PostsSchema = new Schema({
+const newPostsSchema = new Schema({
     title: { type: String, required: true, },
     description: String,
     comments: String,
