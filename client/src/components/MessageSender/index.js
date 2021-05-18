@@ -20,7 +20,7 @@ export default function MessageSender() {
         <div className="messageSender">
             <div className="messageSender-top">
                 <Avatar
-                    avatarImage="https://pbs.twimg.com/profile_images/1148822091682045952/vR2t82Hy.jpg"
+                    avatarImage="https://crhscountyline.com/wp-content/uploads/2020/03/Capture.png"
                 />
                 <form>
                     <input

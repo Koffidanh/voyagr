@@ -17,13 +17,13 @@ function DashboardPage() {
   return (
     <div>
       <Navbar />
-      <NavbarLogin />
+      {/* <NavbarLogin /> */}
       <Container style={{ margin: 0, padding: 0, zIndex: "-1000" }}>
         <Map />
       </Container>
       <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 10, zIndex: "1000" }}>
         <ProfileImage
-          avatarImage="https://pbs.twimg.com/profile_images/1148822091682045952/vR2t82Hy.jpg"
+          avatarImage="https://crhscountyline.com/wp-content/uploads/2020/03/Capture.png"
         />
       </Container>
       <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 5, zIndex: "1000" }}>
@@ -31,9 +31,9 @@ function DashboardPage() {
       <Feed>
         <MessageSender />
         <Post
-          profileImage="https://pbs.twimg.com/profile_images/1148822091682045952/vR2t82Hy.jpg"
+          profileImage="https://crhscountyline.com/wp-content/uploads/2020/03/Capture.png"
           message="Boop Boop"
-          username="Kayvon"
+          username="Username"
           image="https://www.nps.gov/articles/images/Cover-GAAR_SeanTevebough.jpg?maxwidth=1200&autorotate=false"
           timestamp=""
         // profileImage="https://pbs.twimg.com/profile_images/1148822091682045952/vR2t82Hy.jpg"
@@ -43,9 +43,9 @@ function DashboardPage() {
         // timestamp={timestamp}
         />
         <Post
-          profileImage="https://pbs.twimg.com/profile_images/1148822091682045952/vR2t82Hy.jpg"
+          profileImage="https://crhscountyline.com/wp-content/uploads/2020/03/Capture.png"
           message="Boop Boop"
-          username="Kayvon"
+          username="Username"
           timestamp=""
         />
       </Feed>

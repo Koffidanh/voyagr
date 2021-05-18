@@ -3,7 +3,7 @@ const RateLimit = require('express-rate-limit');
 const MongoStore = require('rate-limit-mongo');
 const newPost = require('..modals/newPosts');
 const postsController = require("../../controllers/postsController");
-const checkjwt = require('../../middleware/checkjwt')
+// const checkjwt = require('../../middleware/checkjwt')
 
 // pulls password from the env file will need more secure option
 const {
@@ -33,7 +33,7 @@ router.get('/', async (req, res, next) => {
 });
 
 // The PASSWORD will later be router to each individual user password when signing up
-router.posts('/', limiter, checkjwt, async (req, res, next) => {
+router.posts('/', limiter, async (req, res, next) => {
     try {
         if (req.get('USER-PASS') !== PASSWORD) {
             res.status(401);

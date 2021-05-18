@@ -10,23 +10,22 @@ const BurgerMenu = (props) => {
 
     const toggle = () => setDropdownOpen(prevState => !prevState);
 
-    const { logout, isAuthenticated } = useAuth0();
+    const { logout } = useAuth0();
 
     return (
-        isAuthenticated && (
-            <div className="dropdownDiv">
-                <Dropdown className="dropdown" isOpen={dropdownOpen} toggle={toggle} size="lg">
-                    <DropdownToggle color="343A40" className="dropdown-icon" >
-                        <FontAwesomeIcon icon={faBars} size="lg" />
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                        <DropdownItem href="/dashboard">Dashboard</DropdownItem>
-                        <DropdownItem href="/settings">Settings</DropdownItem>
-                        <DropdownItem onClick={() => logout({ returnTo: window.location.origin })}>Logout</DropdownItem>
-                    </DropdownMenu>
-                </Dropdown >
-            </div>
-        )
+
+        <div className="dropdownDiv">
+            <Dropdown className="dropdown" isOpen={dropdownOpen} toggle={toggle} size="lg">
+                <DropdownToggle color="343A40" className="dropdown-icon" >
+                    <FontAwesomeIcon icon={faBars} size="lg" />
+                </DropdownToggle>
+                <DropdownMenu right>
+                    <DropdownItem href="/dashboard">Dashboard</DropdownItem>
+                    <DropdownItem href="/settings">Settings</DropdownItem>
+                    <DropdownItem onClick={() => logout({ returnTo: window.location.origin })}>Logout</DropdownItem>
+                </DropdownMenu>
+            </Dropdown >
+        </div>
     );
 }
 
