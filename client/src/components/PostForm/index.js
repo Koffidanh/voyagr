@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { newPosts } from '../../API';
 
 const PostForm = ({ location, onClose }) => {
-    const [setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const { register, handleSubmit } = useForm();
 
@@ -24,7 +24,7 @@ const PostForm = ({ location, onClose }) => {
     return (
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
         <form onSubmit={handleSubmit(onSubmit)} className="new-post-form">
-             { error ? <h3 className="error">{error}</h3> : null}
+            { error ? <h3 className="error">{error}</h3> : null}
             {/* Title of Post */}
             <label htmlFor="title">Title</label>
             <input name="title" required ref={register} />
@@ -32,10 +32,9 @@ const PostForm = ({ location, onClose }) => {
             <label htmlFor="description">Description</label>
             <textarea name="description" rows={3} ref={register}></textarea>
             {/* Image and Eventually Video */}
-            <label htmlFor="image">Image</label>
-            <input name="image" ref={register} />
-            {/* Button will post the input data within the form */}
-            <button>{'Create Entry'}</button>
+            <label htmlFor="visitDate">Visit Date</label>
+            <input name="visitDate" type="date" required ref={register} />
+            <button disabled={loading}>{loading ? 'Loading...' : 'Create Post'}</button>
         </form>
     );
 };
