@@ -12,7 +12,7 @@ export const Navbar = () => {
     return (
         <>
             <Nav>
-                <Search />
+                {/* <Search /> */}
                 <NavMenu>
                     <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
                         <FontAwesomeIcon icon={faHome} size="lg" />
