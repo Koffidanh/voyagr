@@ -46,7 +46,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/newPosts", { us
 // Add routes, both API and view
 app.use(routes);
 
-const port = process.env.PORT || 3001;
+// const port = process.env.PORT || 3001;
 // Start the API server
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
