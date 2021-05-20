@@ -1,3 +1,4 @@
+import axios from "axios";
 const API_URL = 'http://localhost:3002';
 
 export async function createdPosts() {
@@ -28,4 +29,9 @@ export async function newPosts(posts) {
     const error = new Error(json.message);
     error.response = json;
     throw error;
+}
+
+
+export const API = {
+    savePost: (post) => axios.post("/api/posts", post)
 }

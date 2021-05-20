@@ -9,7 +9,9 @@ cursor: pointer;
 transition: all 0.2s ease-in-out;
 text-decoration: none;
 border-radius: 24px !important;
-width: 20rem !important;
+width: 12rem !important;
+margin-left: 3rem;
+margin-right: 3rem;
 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 

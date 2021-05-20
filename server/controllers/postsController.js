@@ -18,7 +18,6 @@ module.exports = {
   create: (req, res) => {
     const title = req.body.title;
     const description = req.body.description;
-    const comments = req.body.comments;
     const image = req.body.image;
     const latitude = req.body.latitude;
     const longitude = req.body.longitude;
@@ -26,7 +25,6 @@ module.exports = {
     const newPost = new db.Posts({
       title,
       description,
-      comments,
       image,
       latitude,
       longitude,
