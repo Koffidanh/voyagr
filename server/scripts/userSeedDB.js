@@ -6,7 +6,7 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb+srv://kayvonk:mongo-rising88@cluster0.p20ew.mongodb.net/mainDatabase?retryWrites=true&w=majority"
+  "mongodb://localhost/user"
 );
 
 const newUserSeed = [{

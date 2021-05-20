@@ -14,7 +14,7 @@ import Profile from "../../components/Profile"
 
 function DashboardPage() {
   const { user } = useAuth0();
-  const { name, picture, email } = user;
+  const { name, picture} = user;
 
   return (
     <div>

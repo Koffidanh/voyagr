@@ -9,7 +9,12 @@ import Avatar from '../Avatar';
 import { useAuth0 } from '@auth0/auth0-react';
 import { API } from "../../API"
 
+
+
 export default function MessageSender() {
+    const { user } = useAuth0();
+    const { picture, sub } = user;
+    const userID =  sub ;
     const [input, setInput] = useState({
         title: "",
         description: "",
@@ -17,10 +22,9 @@ export default function MessageSender() {
         latitude: "",
         longitude: "",
         visitDate: "",
+        userID: ""
     });
 
-    const { user } = useAuth0();
-    const { name, picture, email } = user;
 
 
     function handleChange(event) {
@@ -32,7 +36,7 @@ export default function MessageSender() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setInput({ description: "" })
-        console.log(input);
+      
 
         const newPost = {
             title: input.title,
@@ -40,9 +44,10 @@ export default function MessageSender() {
             image: input.image,
             latitude: input.latitude,
             longitude: input.longitude,
-            visitDate: input.visitDate
+            visitDate: input.visitDate,
+            userID: userID
         }
-
+        console.log(newPost);
         API.savePost(newPost).catch(e => console.log(e))
     }
 
