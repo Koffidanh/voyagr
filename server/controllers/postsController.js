@@ -1,4 +1,5 @@
 const db = require("../models");
+import ReactDOM from 'react-dom';
 
 // Defining methods for the postssController
 module.exports = {
@@ -16,19 +17,24 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: (req, res) => {
+  
+
     const title = req.body.title;
     const description = req.body.description;
     const image = req.body.image;
     const latitude = req.body.latitude;
     const longitude = req.body.longitude;
     const visitDate = req.body.visitDate;
+    
+    const userID =  req.params ;
     const newPost = new db.Posts({
       title,
       description,
       image,
       latitude,
       longitude,
-      visitDate
+      visitDate,
+      userID
     });
 
     newPost.save();
