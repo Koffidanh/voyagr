@@ -6,28 +6,60 @@ import { faMapPin } from '@fortawesome/free-solid-svg-icons'
 import { faGrinAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Avatar from '../Avatar';
-
+import { useAuth0 } from '@auth0/auth0-react';
+import { API } from "../../API"
 
 export default function MessageSender() {
-    const [input, setInput] = useState('');
+    const [input, setInput] = useState({
+        title: "",
+        description: "",
+        image: "",
+        latitude: "",
+        longitude: "",
+        visitDate: "",
+    });
+
+    const { user } = useAuth0();
+    const { name, picture, email } = user;
+
+
+    function handleChange(event) {
+
+        const { name, value } = event.target
+        setInput({ ...input, description: value })
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setInput("");
+        setInput({ description: "" })
+        console.log(input);
+
+        const newPost = {
+            title: input.title,
+            description: input.description,
+            image: input.image,
+            latitude: input.latitude,
+            longitude: input.longitude,
+            visitDate: input.visitDate
+        }
+
+        API.savePost(newPost).catch(e => console.log(e))
     }
 
     return (
         <div className="messageSender">
             <div className="messageSender-top">
                 <Avatar
-                    avatarImage="https://crhscountyline.com/wp-content/uploads/2020/03/Capture.png"
+                    avatarImage={picture}
                 />
                 <form>
                     <input
                         placeholder="What's on your mind?"
-                        value={input}
-                        onChange={e => setInput(e.target.value)}
-                        className="messageInput" type="text" />
+                        value={input.description}
+                        onChange={handleChange}
+                        className="messageInput"
+                        type="text"
+                    />
                     <button onClick={handleSubmit} type="submit">
                         Hidden submit
                     </button>

@@ -9,31 +9,33 @@ import Feed from "../../components/Feed";
 import Post from "../../components/Post";
 import ProfileImage from "../../components/ProfileImage";
 import { useAuth0 } from '@auth0/auth0-react';
-import NavbarLogin from "../../components/NavbarLogin";
+import Profile from "../../components/Profile"
+
 
 function DashboardPage() {
-
+  const { user } = useAuth0();
+  const { name, picture, email } = user;
 
   return (
     <div>
       <Navbar />
-      {/* <NavbarLogin /> */}
       <Container style={{ margin: 0, padding: 0, zIndex: "-1000" }}>
         <Map />
       </Container>
       <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 10, zIndex: "1000" }}>
         <ProfileImage
-          avatarImage="https://crhscountyline.com/wp-content/uploads/2020/03/Capture.png"
+          avatarImage={picture}
         />
+        <Profile />
       </Container>
       <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 5, zIndex: "1000" }}>
       </Container>
       <Feed>
         <MessageSender />
         <Post
-          profileImage="https://crhscountyline.com/wp-content/uploads/2020/03/Capture.png"
+          profileImage={picture}
           message="Boop Boop"
-          username="Username"
+          username={name}
           image="https://www.nps.gov/articles/images/Cover-GAAR_SeanTevebough.jpg?maxwidth=1200&autorotate=false"
           timestamp=""
         // profileImage="https://pbs.twimg.com/profile_images/1148822091682045952/vR2t82Hy.jpg"
@@ -43,9 +45,9 @@ function DashboardPage() {
         // timestamp={timestamp}
         />
         <Post
-          profileImage="https://crhscountyline.com/wp-content/uploads/2020/03/Capture.png"
+          profileImage={picture}
           message="Boop Boop"
-          username="Username"
+          username={name}
           timestamp=""
         />
       </Feed>

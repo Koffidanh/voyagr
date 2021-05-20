@@ -15,7 +15,7 @@ export default function Post({ profileImage, image, username, timestamp, message
                     className="post-avatar" />
                 <div className="post-info">
                     <h6>{username}</h6>
-                    <h8>Timestamp</h8>
+                    <h6>Timestamp</h6>
                 </div>
             </div>
             <div className="post-bottom">
