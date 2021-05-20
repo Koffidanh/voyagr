@@ -6,20 +6,20 @@ const db = require("../src/models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/users"
+  "mongodb+srv://kayvonk:mongo-rising88@cluster0.p20ew.mongodb.net/mainDatabase?retryWrites=true&w=majority"
 );
 
-const newUserSeed = [ {
-    userName: "User007",
-    avatarImage: "",
-    email: "user007@gmail.com",
-    password: "12345"
-    
+const newUserSeed = [{
+  userName: "User007",
+  avatarImage: "",
+  email: "user007@gmail.com",
+  password: "12345"
+
 }];
 
-   
 
-  db.Users
+
+db.Users
   .remove({})
   .then(() => db.Users.collection.insertMany(newUserSeed))
   .then(data => {

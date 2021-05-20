@@ -6,7 +6,7 @@ const db = require("../src/models");
 
 mongoose.connect(
     process.env.MONGODB_URI ||
-    "mongodb://localhost/newPosts"
+    "mongodb+srv://kayvonk:mongo-rising88@cluster0.p20ew.mongodb.net/mainDatabase?retryWrites=true&w=majority"
 );
 
 const newPostsSeed = [{
