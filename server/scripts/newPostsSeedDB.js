@@ -16,7 +16,7 @@ const newPostsSeed = [{
     latitude: 20.6843,
     longitude: 88.5678,
     visitDate: 04 / 01 / 2021,
-    userID:""
+    userID: ""
 },
 {
     title: "Great Wall Of China",
@@ -25,7 +25,7 @@ const newPostsSeed = [{
     latitude: 40.4319,
     longitude: 116.5704,
     visitDate: 04 / 08 / 2021,
-    userID:""
+    userID: ""
 },
 {
     title: "Petra",
@@ -34,7 +34,7 @@ const newPostsSeed = [{
     latitude: 30.3285,
     longitude: 35.4444,
     visitDate: 04 / 15 / 2021,
-    userID:""
+    userID: ""
 },
 {
     title: "Christ The Redeemer",
@@ -43,7 +43,7 @@ const newPostsSeed = [{
     latitude: 22.9519,
     longitude: 43.2105,
     visitDate: 04 / 21 / 2021,
-    userID:""
+    userID: ""
 },
 {
     title: "Machu Picchu",
@@ -52,7 +52,7 @@ const newPostsSeed = [{
     latitude: 13.1631,
     longitude: 72.5450,
     visitDate: 04 / 28 / 2021,
-    userID:""
+    userID: ""
 },
 {
     title: "Colosseum",
@@ -61,7 +61,7 @@ const newPostsSeed = [{
     latitude: 41.8902,
     longitude: 12.4922,
     visitDate: 05 / 01 / 2021,
-    userID:""
+    userID: ""
 },
 {
     title: "Taj Mahal",
@@ -70,7 +70,7 @@ const newPostsSeed = [{
     latitude: 27.1751,
     longitude: 78.0421,
     visitDate: 05 / 08 / 2021,
-    userID:""
+    userID: ""
 },
 {
     title: "The Great Pyramid of Giza",
@@ -79,7 +79,7 @@ const newPostsSeed = [{
     latitude: 29.9792,
     longitude: 31.1342,
     visitDate: 05 / 16 / 2021,
-    userID:""
+    userID: ""
 }
 ];
 

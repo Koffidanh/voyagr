@@ -14,7 +14,7 @@ import { API } from "../../API"
 export default function MessageSender() {
     const { user } = useAuth0();
     const { picture, sub } = user;
-    const userID =  sub ;
+    const userID = sub;
     const [input, setInput] = useState({
         title: "",
         description: "",
@@ -36,7 +36,7 @@ export default function MessageSender() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setInput({ description: "" })
-      
+
 
         const newPost = {
             title: input.title,
