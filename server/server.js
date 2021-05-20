@@ -4,10 +4,11 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
 const mongoose = require("mongoose");
+const middlewares = require('././middleware/middlewares');
 
 require('dotenv').config();
-// const posts = require('./api/posts');
 
+// const posts = require('./api/posts');
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -43,8 +44,24 @@ app.use(session({ secret: "voyagr", resave: true, saveUninitialized: true }));
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/newPosts", { useNewUrlParser: true, useUnifiedTopology: true });
 
+app.use(morgan('common'));
+app.use(helmet());
+app.use(cors({
+  origin: process.env.CORS_ORIGIN,
+}));
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Welcome to the Voyagr App!',
+  });
+});
+
 // Add routes, both API and view
 app.use(routes);
+app.use('/api/posts', posts);
+app.use(middlewares.notFound);
+app.use(middlewares.errorHandler);
 
 // const port = process.env.PORT || 3001;
 // Start the API server

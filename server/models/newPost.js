@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const requiredNumber = { type: Number, required: true, };
 
-const newPostsSchema = new Schema({
+const newPostSchema = new Schema({
   title: { type: String },
   description: String,
   image: String,
@@ -13,7 +13,7 @@ const newPostsSchema = new Schema({
   userID: { type: String }
 });
 
-const Posts = mongoose.model('Posts', newPostsSchema);
+const NewPost = mongoose.model('NewPost', newPostSchema);
 
 
-module.exports = Posts;
+module.exports = NewPost;
