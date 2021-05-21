@@ -14,7 +14,7 @@ import Profile from "../../components/Profile"
 
 function DashboardPage() {
   const { user } = useAuth0();
-  const { name, picture} = user;
+  const { name, picture } = user;
 
   return (
     <div>
@@ -34,7 +34,7 @@ function DashboardPage() {
         <MessageSender />
         <Post
           profileImage={picture}
-          message="Boop Boop"
+          description="Boop Boop"
           username={name}
           image="https://www.nps.gov/articles/images/Cover-GAAR_SeanTevebough.jpg?maxwidth=1200&autorotate=false"
           timestamp=""
