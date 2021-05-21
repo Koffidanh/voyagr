@@ -44,12 +44,12 @@ app.use(session({ secret: "voyagr", resave: true, saveUninitialized: true }));
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/newPosts", { useNewUrlParser: true, useUnifiedTopology: true });
 
-app.use(morgan('common'));
-app.use(helmet());
-app.use(cors({
-  origin: process.env.CORS_ORIGIN,
-}));
-app.use(express.json());
+// app.use(morgan('common'));
+// app.use(helmet());
+// app.use(cors({
+//   origin: process.env.CORS_ORIGIN,
+// }));
+// app.use(express.json());
 
 app.get('/', (req, res) => {
   res.json({
@@ -59,9 +59,9 @@ app.get('/', (req, res) => {
 
 // Add routes, both API and view
 app.use(routes);
-app.use('/api/posts', posts);
-app.use(middlewares.notFound);
-app.use(middlewares.errorHandler);
+// app.use('/api/posts', posts);
+// app.use(middlewares.notFound);
+// app.use(middlewares.errorHandler);
 
 // const port = process.env.PORT || 3001;
 // Start the API server
