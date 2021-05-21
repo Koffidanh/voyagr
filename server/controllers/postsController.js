@@ -23,6 +23,7 @@ module.exports = {
     const longitude = req.body.longitude;
     const visitDate = req.body.visitDate;
     const userID = req.body.userID;
+    const timestamp = req.body.timestamp;
     const newPost = new db.Posts({
       title,
       description,
@@ -30,7 +31,8 @@ module.exports = {
       latitude,
       longitude,
       visitDate,
-      userID
+      userID,
+      timestamp
     });
 
     newPost.save();

@@ -7,11 +7,13 @@ import { faGrinAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Avatar from '../Avatar';
 import { useAuth0 } from '@auth0/auth0-react';
-import { API } from "../../API"
+import { API } from "../../utils/API"
 
 
 
 export default function MessageSender() {
+    const timestamp = Date.now();
+    const time = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(timestamp)
     const { user } = useAuth0();
     const { picture, sub } = user;
     const userID = sub;
@@ -22,7 +24,8 @@ export default function MessageSender() {
         latitude: "",
         longitude: "",
         visitDate: "",
-        userID: ""
+        userID: "",
+        timestamp: ""
     });
 
 
@@ -45,7 +48,8 @@ export default function MessageSender() {
             latitude: input.latitude,
             longitude: input.longitude,
             visitDate: input.visitDate,
-            userID: userID
+            userID: userID,
+            timestamp: time
         }
         console.log(newPost);
         API.savePost(newPost).catch(e => console.log(e))
