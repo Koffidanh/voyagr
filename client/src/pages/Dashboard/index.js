@@ -26,7 +26,6 @@ function DashboardPage() {
         <ProfileImage
           avatarImage={picture}
         />
-        <Profile />
       </Container>
       <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 5, zIndex: "1000" }}>
       </Container>
