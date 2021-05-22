@@ -14,6 +14,7 @@ import "./map.css";
 import { API } from "./utils/API"
 import { useAuth0 } from '@auth0/auth0-react';
 import ProfileImage from './components/ProfileImage';
+import axios from "axios"
 
 export const Header = () => {
   const [newPosts, setNewPosts] = useState([]);
@@ -43,7 +44,15 @@ export const Header = () => {
   };
 
   useEffect(() => {
-    getPosts();
+    const getPosts = async () => {
+      try {
+        const res = await axios.get("/api/dashboard/" + sub)
+        setNewPosts(res.data)
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getPosts()
   }, []);
 
   const showAddMarkerPopup = (event) => {
@@ -107,19 +116,13 @@ export const Header = () => {
   return (
     <>
       <Nav>
-        
-            <div
-              ref={geocoderContainerRef}
-              style={{ position: "relative", left: 30 }}
-            />
-         
-            {/* <div>
-              <p style={{ color: "white" }}>or</p>
-            </div>
-          */}
-            <div>
-              <button class="geoLocater" ref={geolocateControlRef}>My Current Location</button>
-            </div>
+        <div
+          ref={geocoderContainerRef}
+          style={{ position: "relative", left: 30 }}
+        />
+        <div>
+          <button class="geoLocater" ref={geolocateControlRef}>My Current Location</button>
+        </div>
 
         <NavMenu>
           <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
@@ -261,10 +264,6 @@ export const Header = () => {
                     />
                     <input type="submit" value="Submit" />
                   </form>
-                  {/* <NewPostForm onClose={() => {
-                                        setAddPostLocation(null);
-                                        getPosts();
-                                    }} location={addPostLocation} /> */}
                 </div>
               </Popup>
             </>

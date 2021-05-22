@@ -6,7 +6,7 @@ import "./style.css"
 // import { faCommentAlt } from '@fortawesome/free-solid-svg-icons'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useAuth0 } from '@auth0/auth0-react';
-import POST from "../../utils/GET"
+import { API } from "../../utils/API"
 import Message from '../Message'
 
 
@@ -14,34 +14,36 @@ export default function Post(profileImage) {
     const { user } = useAuth0();
     const { name, picture } = user;
     const [messages, setMessages] = useState(
-      []
+        []
     )
 
     useEffect(() => {
 
-        POST.getPosts()
+        API.getPost(user.sub)
             .then(res =>
                 setMessages(res.data)
             )
             .catch(err => console.log(err));
     }, []);
 
-    console.log(messages)
+    useEffect(() => {
+        console.log(messages)
+    }, [messages]);
 
     return (
-    //    <h1>test</h1>
-   messages 
-    .map(message =>
-        <Message
-        profileImage={picture}
-            username = {name}
-            // username = "Koffi"
-            timestamp = {message.timestamp}
-            // timestamp = "05/22/2021"
-            description = {message.description}
-            image = {message.image}
+        //    <h1>test</h1>
+        messages
+            .map(message =>
+                <Message
+                    profileImage={picture}
+                    username={name}
+                    // username = "Koffi"
+                    timestamp={message.timestamp}
+                    // timestamp = "05/22/2021"
+                    description={message.description}
+                    image={message.image}
 
-        />)
+                />)
 
     )
 }
