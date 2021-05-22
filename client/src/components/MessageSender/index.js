@@ -13,7 +13,7 @@ import { API } from "../../utils/API"
 
 export default function MessageSender() {
     const timestamp = Date.now();
-    const time = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(timestamp)
+    const time = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).format(timestamp)
     const { user } = useAuth0();
     const { picture, sub } = user;
     const userID = sub;
@@ -93,7 +93,7 @@ export default function MessageSender() {
                     Feeling/Activity
                 </div>
             </div>
-            
+
         </div>
     )
 }
