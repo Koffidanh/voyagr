@@ -27,12 +27,16 @@ export const Header = () => {
     zoom: 2
   });
   const geocoderContainerRef = useRef();
+  const geolocateControlRef = useRef();
   const mapRef = useRef();
   const handleViewportChange = useCallback(
     (newViewport) => setViewport(newViewport),
     []
   );
-
+  const geolocateControlStyle = {
+    right: 10,
+    top: 10
+  };
   const getPosts = async () => {
     const newPosts = await listNewPosts();
     setNewPosts(newPosts);
@@ -103,18 +107,28 @@ export const Header = () => {
   return (
     <>
       <Nav>
-        <div
-          ref={geocoderContainerRef}
-          style={{ position: "relative", left: 20 }}
-        />
+        
+            <div
+              ref={geocoderContainerRef}
+              style={{ position: "relative", left: 30 }}
+            />
+         
+            {/* <div>
+              <p style={{ color: "white" }}>or</p>
+            </div>
+          */}
+            <div>
+              <button class="geoLocater" ref={geolocateControlRef}>My Current Location</button>
+            </div>
+
         <NavMenu>
-          <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
+          <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faHome} size="lg" />
           </NavLink>
-          <NavLink to="/friends" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
+          <NavLink to="/friends" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faUserFriends} size="lg" />
           </NavLink>
-          <NavLink to="/settings" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
+          <NavLink to="/settings" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faCog} size="lg" />
           </NavLink>
         </NavMenu>
@@ -129,12 +143,13 @@ export const Header = () => {
         onClick={showAddMarkerPopup}
         transitionDuration="200"
       >
-        {/* <GeolocateControl
-        style={geolocateControlStyle}
-        positionOptions={{ enableHighAccuracy: true }}
-        trackUserLocation={true}
-        auto
-      /> */}
+        <GeolocateControl
+          style={geolocateControlStyle}
+          containerRef={geolocateControlRef}
+          positionOptions={{ enableHighAccuracy: true }}
+          trackUserLocation={true}
+          auto
+        />
         <Geocoder
           mapRef={mapRef}
           containerRef={geocoderContainerRef}

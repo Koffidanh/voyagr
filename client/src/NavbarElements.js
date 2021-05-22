@@ -25,7 +25,7 @@ height: 100%;
 cursor: pointer;
 
 &.active {
-    color: #3e81c9;
+    color: #61DAFB;
 }
 `;
 
