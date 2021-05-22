@@ -17,6 +17,7 @@ import ProfileImage from './components/ProfileImage';
 import axios from "axios"
 
 export const Header = () => {
+  // const [geoLoc, setGeoLoc] = useState("");
   const [newPosts, setNewPosts] = useState([]);
   const [showPopup, setShowPopup] = useState({});
   const [addPostLocation, setAddPostLocation] = useState(null);
@@ -111,6 +112,10 @@ export const Header = () => {
     API.savePost(newPost).catch(e => console.log(e))
   }
 
+  // function geolocateToggle(e) {
+  //   e.preventDefault;
+  //   setGeoLoc(trackUserLocation = true)
+  // }
 
 
   return (
@@ -151,7 +156,7 @@ export const Header = () => {
           containerRef={geolocateControlRef}
           positionOptions={{ enableHighAccuracy: true }}
           trackUserLocation={true}
-          auto
+        // auto
         />
         <Geocoder
           mapRef={mapRef}
