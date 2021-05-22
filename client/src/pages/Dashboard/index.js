@@ -17,7 +17,7 @@ function DashboardPage() {
   return (
     <div>
       <Header />
-      <Feed style={{ marginTop: 100 }} >
+      <Feed>
         <MessageSender />
         <Post
           profileImage={picture}
