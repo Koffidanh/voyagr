@@ -33,23 +33,23 @@ function DashboardPage() {
       <Feed>
         <MessageSender />
         <Post
-          profileImage={picture}
-          description="Boop Boop"
-          username={name}
-          image="https://www.nps.gov/articles/images/Cover-GAAR_SeanTevebough.jpg?maxwidth=1200&autorotate=false"
-          timestamp=""
+          // profileImage={picture}
+          // description="Boop Boop"
+          // username={name}
+          // image="https://www.nps.gov/articles/images/Cover-GAAR_SeanTevebough.jpg?maxwidth=1200&autorotate=false"
+          // timestamp=""
         // profileImage="https://pbs.twimg.com/profile_images/1148822091682045952/vR2t82Hy.jpg"
         // message="Boop Boop"
         // username={username}
         // image={image}
         // timestamp={timestamp}
         />
-        <Post
+        {/* <Post
           profileImage={picture}
           message="Boop Boop"
           username={name}
           timestamp=""
-        />
+        /> */}
       </Feed>
     </div>
   );
