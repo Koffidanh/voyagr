@@ -1,5 +1,5 @@
 .signupBtn {
-background: green ;
+background: #61DAFB;
 padding: 0px 24px; 
 align-items: center !important;
 color: #fff;
@@ -9,9 +9,9 @@ cursor: pointer;
 transition: all 0.2s ease-in-out;
 text-decoration: none;
 border-radius: 24px !important;
-width: 12rem !important;
+width: 10rem !important;
 margin-left: 3rem;
-margin-right: 3rem;
+margin-right: 1rem;
 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
