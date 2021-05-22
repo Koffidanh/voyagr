@@ -121,7 +121,6 @@ export const Header = () => {
         <BurgerMenu />
       </Nav>
       <ReactMapGL
-        style={{ top: 1 }}
         ref={mapRef}
         {...viewport}
         mapStyle="mapbox://styles/thecjreynolds/ck117fnjy0ff61cnsclwimyay"
@@ -256,10 +255,10 @@ export const Header = () => {
             </>
           ) : null
         }
-        <ProfileImage
-          avatarImage={picture}
-        />
       </ReactMapGL>
+      <ProfileImage
+        avatarImage={picture}
+      />
     </>
   )
 }

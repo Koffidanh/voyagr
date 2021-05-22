@@ -1,8 +1,11 @@
 .profileImage {
 border: 1px solid white;
-/* text-align: center; */
-margin: 0 auto;
-z-index: 1000 !important;
+display: flex !important;
+align-items: center;
+position: relative;
+margin-left: auto;
+margin-right: auto;
+top: -5rem;
 };
 
 
