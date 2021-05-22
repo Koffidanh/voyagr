@@ -93,6 +93,7 @@ export default function MessageSender() {
                     Feeling/Activity
                 </div>
             </div>
+            
         </div>
     )
 }
