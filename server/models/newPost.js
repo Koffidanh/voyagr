@@ -11,6 +11,7 @@ const newPostSchema = new Schema({
   longitude: { type: Number, min: -180, max: 180, },
   visitDate: { type: Date, },
   userID: { type: String },
+  date: { type: String },
   timestamp: { type: String }
 });
 

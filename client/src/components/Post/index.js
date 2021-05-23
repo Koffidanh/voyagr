@@ -31,7 +31,7 @@ export default function Post(profileImage) {
                     title={message.title}
                     profileImage={picture}
                     username={name}
-                    timestamp={message.timestamp}
+                    date={message.date}
                     description={message.description}
                     image={message.image}
                 />)

@@ -15,6 +15,7 @@ const newPostsSeed = [{
     longitude: 88.5678,
     visitDate: 04 / 01 / 2021,
     userID: "",
+    date: "",
     timestamp: ""
 },
 {
@@ -25,6 +26,7 @@ const newPostsSeed = [{
     longitude: 116.5704,
     visitDate: 04 / 08 / 2021,
     userID: "",
+    date: "",
     timestamp: ""
 },
 {
@@ -35,6 +37,7 @@ const newPostsSeed = [{
     longitude: 35.4444,
     visitDate: 04 / 15 / 2021,
     userID: "",
+    date: "",
     timestamp: ""
 },
 {
@@ -45,6 +48,7 @@ const newPostsSeed = [{
     longitude: 43.2105,
     visitDate: 04 / 21 / 2021,
     userID: "",
+    date: "",
     timestamp: ""
 },
 {
@@ -55,6 +59,7 @@ const newPostsSeed = [{
     longitude: 72.5450,
     visitDate: 04 / 28 / 2021,
     userID: "",
+    date: "",
     timestamp: ""
 },
 {
@@ -65,6 +70,7 @@ const newPostsSeed = [{
     longitude: 12.4922,
     visitDate: 05 / 01 / 2021,
     userID: "",
+    date: "",
     timestamp: ""
 },
 {
@@ -75,6 +81,7 @@ const newPostsSeed = [{
     longitude: 78.0421,
     visitDate: 05 / 08 / 2021,
     userID: "",
+    date: "",
     timestamp: ""
 },
 {
@@ -85,6 +92,7 @@ const newPostsSeed = [{
     longitude: 31.1342,
     visitDate: 05 / 16 / 2021,
     userID: "",
+    date: "",
     timestamp: ""
 }
 ];

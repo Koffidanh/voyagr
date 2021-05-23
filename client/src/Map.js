@@ -3,12 +3,13 @@ import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
-import { Nav, NavLink, NavMenu } from "./NavbarElements"
+import { Nav, NavMenu } from "./NavbarElements"
 import BurgerMenu from "./components/Dropdown"
-import { faHome } from '@fortawesome/free-solid-svg-icons'
-import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
-import { faCog } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { Nav, NavLink, NavMenu } from "./NavbarElements"
+// import { faHome } from '@fortawesome/free-solid-svg-icons'
+// import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
+// import { faCog } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "./map.css";
 import { API } from "./utils/API"
 import { useAuth0 } from '@auth0/auth0-react';
@@ -73,6 +74,7 @@ export const Header = () => {
     [handleViewportChange]
   );
 
+  let timestamp = Date.now()
   var now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
 
   function handleChange(event) {
@@ -93,7 +95,8 @@ export const Header = () => {
       longitude: parseFloat(addPostLocation.longitude).toFixed(2),
       visitDate: input.visitDate,
       userID: userID,
-      timestamp: now
+      date: now,
+      timestamp: timestamp
     }
     console.log(newPost);
     API.savePost(newPost).catch(e => console.log(e))
