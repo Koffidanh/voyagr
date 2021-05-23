@@ -5,7 +5,7 @@ import styled from "styled-components"
 // import "./style.css";
 
 export const Nav = styled.nav`
-background: #333333;
+background: #61DAFB;
 height: 80px;
 display: flex;
 justify-content: space-between;
@@ -23,7 +23,7 @@ height: 100%;
 cursor: pointer;
 
 &.active {
-    color: #3e81c9;
+    color: #61DAFB;
 }
 `;
 
@@ -77,7 +77,7 @@ text-decoration: none;
 &:hover {
     transition: all 0.2s ease-in-out;
     background: #fff;
-    color: #010606;
+    color: #61DAFB;
 }
 
 `;

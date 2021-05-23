@@ -14,13 +14,13 @@ export const Navbar = () => {
             <Nav>
                 {/* <Search /> */}
                 <NavMenu>
-                    <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
+                    <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
                         <FontAwesomeIcon icon={faHome} size="lg" />
                     </NavLink>
-                    <NavLink to="/friends" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
+                    <NavLink to="/friends" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
                         <FontAwesomeIcon icon={faUserFriends} size="lg" />
                     </NavLink>
-                    <NavLink to="/settings" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
+                    <NavLink to="/settings" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
                         <FontAwesomeIcon icon={faCog} size="lg" />
                     </NavLink>
                 </NavMenu>

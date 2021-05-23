@@ -20,6 +20,7 @@ var moment = require('moment');
 
 export const Header = () => {
   // const [geoLoc, setGeoLoc] = useState("");
+  // const [height, width] = useWindowSize();
   const [newPosts, setNewPosts] = useState([]);
   const [showPopup, setShowPopup] = useState({});
   const [addPostLocation, setAddPostLocation] = useState(null);
@@ -28,7 +29,7 @@ export const Header = () => {
     height: '60vh',
     latitude: 37.6,
     longitude: -95.665,
-    zoom: 2
+    zoom: 2,
   });
   const geocoderContainerRef = useRef();
   const geolocateControlRef = useRef();
@@ -122,6 +123,20 @@ export const Header = () => {
     API.savePost(newPost).catch(e => console.log(e))
   }
 
+  // function useWindowSize() {
+  //   const [size, setSize] = useState([window.innerHeight, window.innerWidth]);
+  //   useEffect(() => {
+  //     const handleResize = () => { 
+  //       setSize([window.innerHeight, window.innerWidth]);
+  //     }
+  //     window.addEventListener("resize", handleResize);
+  //     // Clean up!
+  //     return () => {
+  //       window.removeEventListener("resize", handleResize);
+  //     };
+  //   }, []);
+  //   return size;
+  // }
   // function geolocateToggle(e) {
   //   e.preventDefault;
   //   setGeoLoc(trackUserLocation = true)
@@ -146,12 +161,13 @@ export const Header = () => {
           <NavLink to="/friends" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faUserFriends} size="lg" />
           </NavLink>
-          <NavLink to="/settings" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
+          <NavLink to="/settings" activeStyle={{ textDecoration: "none", color: "#61DAFB;" }}>
             <FontAwesomeIcon icon={faCog} size="lg" />
           </NavLink>
         </NavMenu>
         <BurgerMenu />
       </Nav>
+      
       <ReactMapGL
         ref={mapRef}
         {...viewport}

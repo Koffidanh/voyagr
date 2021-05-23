@@ -16,7 +16,7 @@ function DashboardPage() {
 
   return (
     <div
-      style={{ backgroundColor: "#F7F7F7" }}
+      style={{ backgroundColor: "#F7F7F7"}}
     >
       <Header />
       <Feed>
