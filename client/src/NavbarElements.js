@@ -22,6 +22,10 @@ padding: 0 1rem;
 height: 100%;
 cursor: pointer;
 
+&:hover {
+    transition: all 0.2s ease-in-out;
+    color: #61DAFB;
+}
 &.active {
     color: #61DAFB;
 }
@@ -33,9 +37,9 @@ align-items: center;
 justify-content: space-between;
 
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     display:none;
-}
+} */
 `;
 
 // export const NavBtn = styled.nav`
