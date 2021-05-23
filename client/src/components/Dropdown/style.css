@@ -4,7 +4,8 @@
 }
 
 .dropdown-icon:hover {
-  background-color: grey;
+  background-color: #fff;
+  color: #fff;
   border-radius: 20px;
   cursor: pointer;
 }
@@ -14,5 +15,9 @@
 }
 
 .fa-bars {
-  color: white;
+  color: #61DAFB;
 }
+
+/* .dropdown-icon .fa-bars:hover {
+  color: #fff;
+} */

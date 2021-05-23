@@ -134,9 +134,11 @@ export const Header = () => {
       <ReactMapGL
         ref={mapRef}
         {...viewport}
+        width="100vw" height="60vh" onViewportChange={setViewport}
+        attributionControl={false}
         mapStyle="mapbox://styles/thecjreynolds/ck117fnjy0ff61cnsclwimyay"
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-        onViewportChange={setViewport}
+        onViewportChange={nextViewport => setViewport(nextViewport)}
         onClick={showAddMarkerPopup}
         transitionDuration="200"
       >
