@@ -12,7 +12,7 @@ module.exports = {
   findById: function (req, res) {
     db.Posts
       .find({ userID: req.params.id })
-      .sort({ visitDate: -1 })
+      .sort({ timestamp: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

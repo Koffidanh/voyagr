@@ -17,10 +17,10 @@ export const Navbar = () => {
                     <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
                         <FontAwesomeIcon icon={faHome} size="lg" />
                     </NavLink>
-                    <NavLink to="/friends" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
+                    <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
                         <FontAwesomeIcon icon={faUserFriends} size="lg" />
                     </NavLink>
-                    <NavLink to="/settings" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
+                    <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#3e81c9" }}>
                         <FontAwesomeIcon icon={faCog} size="lg" />
                     </NavLink>
                 </NavMenu>

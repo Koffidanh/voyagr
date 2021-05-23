@@ -19,7 +19,7 @@ var moment = require('moment');
 
 
 export const Header = () => {
-  // const [geoLoc, setGeoLoc] = useState("");
+  // const [geoLocate, setGeoLocate] = useState("");
   const [newPosts, setNewPosts] = useState([]);
   const [showPopup, setShowPopup] = useState({});
   const [addPostLocation, setAddPostLocation] = useState(null);
@@ -38,8 +38,8 @@ export const Header = () => {
     []
   );
   const geolocateControlStyle = {
-    right: 10,
-    top: 10
+    right: 30,
+    top: 15
   };
   const getPosts = async () => {
     const newPosts = await listNewPosts();
@@ -74,29 +74,14 @@ export const Header = () => {
     []
   );
 
-
   let timestamp = Date.now()
-  console.log(timestamp); // get current timestamp
   let time = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(timestamp)
-  console.log(time); // get current timestamp
-
   var now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
-  console.log(now)
-  // const timestamp = Date.now();
-  // const time = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(timestamp)
+
   const { user } = useAuth0();
   const { picture, sub } = user;
   const userID = sub;
-  const [input, setInput] = useState({
-    title: "",
-    description: "",
-    image: "",
-    latitude: "",
-    longitude: "",
-    visitDate: "",
-    userID: "",
-    timestamp: ""
-  });
+  const [input, setInput] = useState({});
 
   function handleChange(event) {
 
@@ -112,8 +97,8 @@ export const Header = () => {
       title: input.title,
       description: input.description,
       image: input.image,
-      latitude: addPostLocation.latitude,
-      longitude: addPostLocation.longitude,
+      latitude: parseFloat(addPostLocation.latitude).toFixed(2),
+      longitude: parseFloat(addPostLocation.longitude).toFixed(2),
       visitDate: input.visitDate,
       userID: userID,
       timestamp: now
@@ -124,9 +109,8 @@ export const Header = () => {
 
   // function geolocateToggle(e) {
   //   e.preventDefault;
-  //   setGeoLoc(trackUserLocation = true)
+  //   setGeoLocate(trackUserLocation = true)
   // }
-
 
   return (
     <>
@@ -143,10 +127,10 @@ export const Header = () => {
           <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faHome} size="lg" />
           </NavLink>
-          <NavLink to="/friends" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
+          <NavLink to="/login" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faUserFriends} size="lg" />
           </NavLink>
-          <NavLink to="/settings" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
+          <NavLink to="/login" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faCog} size="lg" />
           </NavLink>
         </NavMenu>
@@ -215,7 +199,10 @@ export const Header = () => {
                     anchor="top" >
                     <div className="popup">
                       <h3>{post.title}</h3>
-                      <p>{post.comments}</p>
+                      <p>{post.description}</p>
+                      <h6>Latitude, Longitude:</h6>
+                      <p> {post.latitude}, {post.longitude} </p>
+
                       <small>Visited on: {new Date(post.visitDate).toLocaleDateString()}</small>
                       {post.image && <img src={post.image} alt={post.title} />}
                     </div>
