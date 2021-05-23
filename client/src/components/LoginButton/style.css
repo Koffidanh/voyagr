@@ -1,17 +1,17 @@
 .loginBtn {
-background: none!important;
- border: none !important;  
-color: #fff;
-margin: auto !important;
-border: none;
-outline: none;
-cursor: pointer;
-font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-/* transition: all 0.2s ease-in-out; */
+  background: none!important;
+  border: none !important;  
+  color: #fff;
+  margin: auto !important;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  /* transition: all 0.2s ease-in-out; */
 }
 
 /* .loginBtn:hover {
-    transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #fff;
+  transition: all 0.2s ease-in-out;
+  background: #fff;
+  color: #fff;
 } */

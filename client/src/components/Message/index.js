@@ -1,6 +1,5 @@
 import React from 'react'
 import Avatar from '../Avatar'
-//import "./style.css"
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 import { faShare } from '@fortawesome/free-solid-svg-icons'
 import { faCommentAlt } from '@fortawesome/free-solid-svg-icons'
@@ -42,8 +41,6 @@ export default function Message({ username, timestamp, description, image, title
                     </div>
                 </div>
             </div>
-
         </div >
-
     )
 }

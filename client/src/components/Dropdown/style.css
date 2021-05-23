@@ -1,42 +1,16 @@
-/* @media (min-width: 768px) {
-.dropdownDiv {
-    margin-left: 10rem;
-}
-}
-
-@media (max-width: 768px) {
-.dropdownDiv {
-     margin-left: 0;
-}
-} */
-
-.dropdown-icon
- { 
+.dropdown-icon { 
   height: 80px;
   width: 80px;
 }
 
-/* @media (min-width: 768px) {
-.dropdown {
-  display: none;
-
-}
-} */
-
-/* @media (max-width: 768px) {
-.dropdown {
-    display: block;
-}
-} */
-
 .dropdown-icon:hover {
-background-color: grey;
-border-radius: 20px;
-cursor: pointer;
+  background-color: grey;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .dropdown-icon:after {
-    display: none;
+  display: none;
 }
 
 .fa-bars {
