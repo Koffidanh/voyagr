@@ -17,22 +17,51 @@
     padding: 20px;
   }
 
-.messageSender-top > form {
+/* .messageSender-top > form {
     margin-left: 10px;
     background-color: rgb(240, 240, 240);
     padding: 10px;
     border-radius: 500px;
     width: 80%;
+} */
+
+.visitDateText{
+  color: white;
+  width: 7rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: larger;
+  margin-left: 11.5rem;
 }
 
-.messageSender-top > form > input {
+.titleDiv {
+width: 25rem
+}
+.messageInput , .visitDateDiv, .titleDiv {
+    background-color: rgb(240, 240, 240) !important;
+    padding: 10px;
+    border-radius: 500px;
+  margin-left: 1rem;
+}
+
+
+.messageSender-top > form > div > input {
 
     border:none;
     background-color: transparent;
     outline-width: 0;
+    width: 95%
 }
 
-.messageSender-top > form > button  {
+.messageSender-top > form > div > div > input {
+
+    border:none;
+    background-color: transparent;
+    outline-width: 0;
+
+}
+
+.senderBtn  {
 display:  none;
 }
 

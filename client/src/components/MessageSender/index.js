@@ -14,40 +14,23 @@ var moment = require('moment');
 
 export default function MessageSender() {
     let timestamp = Date.now()
-    console.log(timestamp); // get current timestamp
     let time = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(timestamp)
-    console.log(time); // get current timestamp
-
     var now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
-    console.log(now)
-    // var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
-    // const timestamp = Date.now();
-    // const time = new Intl.DateTimeFormat('en-US', options).format(timestamp);
+
     const { user } = useAuth0();
     const { picture, sub } = user;
     const userID = sub;
-    const [input, setInput] = useState({
-        title: "",
-        description: "",
-        image: "",
-        latitude: "",
-        longitude: "",
-        visitDate: "",
-        userID: "",
-        timestamp: ""
-    });
-
-
+    const [input, setInput] = useState({});
 
     function handleChange(event) {
 
         const { name, value } = event.target
-        setInput({ ...input, description: value })
+        setInput({ ...input, [event.target.name]: value })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setInput({ description: "" })
+        setInput({ title: "", description: "", image: "", visitDate: "" })
 
         const placeholderLat = 25;
         const placeholderLong = -71;
@@ -58,7 +41,7 @@ export default function MessageSender() {
             image: input.image,
             latitude: placeholderLat,
             longitude: placeholderLong,
-            visitDate: time,
+            visitDate: input.visitDate,
             userID: userID,
             timestamp: now
         }
@@ -73,16 +56,53 @@ export default function MessageSender() {
                     avatarImage={picture}
                 />
                 <form>
-                    <input
-                        placeholder="What's on your mind?"
-                        value={input.description}
-                        onChange={handleChange}
-                        className="messageInput"
-                        type="text"
-                    />
-                    <button onClick={handleSubmit} type="submit">
-                        Hidden submit
-                    </button>
+                    <div
+                        style={{ display: "flex" }}
+                    >
+                        <div
+                            className="titleDiv"
+
+                        > <input
+                                name="title"
+                                placeholder="Title"
+                                value={input.title}
+                                onChange={handleChange}
+                                className="titleInput"
+                                type="text"
+                            />
+                        </div>
+
+                        <p
+                            className="visitDateText"
+
+                        >
+                            Date Visited:</p>
+                        <div
+                            className="visitDateDiv"
+                            style={{ display: "flex", alignItems: "center" }}
+                        >
+                            <input
+                                name="vistDate"
+                                value={input.visitDate}
+                                onChange={handleChange}
+                                className="vistDateInput"
+                                type="date"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        style={{ marginTop: 15, width: 950 }}
+                    >
+                        <input
+                            name="description"
+                            placeholder="What's on your mind?                                        "
+                            value={input.description}
+                            onChange={handleChange}
+                            className="messageInput"
+                            type="text"
+                        />
+                    </div>
+                    <input class="senderBtn" type="submit" value="Submit" onClick={handleSubmit} />
                 </form>
 
             </div>

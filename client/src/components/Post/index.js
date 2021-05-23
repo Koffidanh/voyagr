@@ -35,6 +35,7 @@ export default function Post(profileImage) {
         messages
             .map(message =>
                 <Message
+                    title={message.title}
                     profileImage={picture}
                     username={name}
                     // username = "Koffi"
