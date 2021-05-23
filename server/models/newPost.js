@@ -11,7 +11,7 @@ const newPostSchema = new Schema({
   longitude: { type: Number, min: -180, max: 180, },
   visitDate: { type: Date, },
   userID: { type: String },
-  timestamp: { type: Date }
+  timestamp: { type: String }
 });
 
 const NewPost = mongoose.model('NewPost', newPostSchema);
