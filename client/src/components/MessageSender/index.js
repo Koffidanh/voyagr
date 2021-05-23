@@ -11,6 +11,7 @@ import { API } from "../../utils/API"
 var moment = require('moment');
 
 export default function MessageSender() {
+    let timestamp = Date.now()
     var now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
 
     const { user } = useAuth0();
@@ -39,7 +40,8 @@ export default function MessageSender() {
             longitude: placeholderLong,
             visitDate: input.visitDate,
             userID: userID,
-            timestamp: now
+            date: now,
+            timestamp: timestamp
         }
         console.log(newPost);
         API.savePost(newPost).catch(e => console.log(e))
