@@ -15,6 +15,8 @@ import { API } from "./utils/API"
 import { useAuth0 } from '@auth0/auth0-react';
 import ProfileImage from './components/ProfileImage';
 import axios from "axios"
+var moment = require('moment');
+
 
 export const Header = () => {
   // const [geoLoc, setGeoLoc] = useState("");
@@ -72,8 +74,16 @@ export const Header = () => {
     []
   );
 
-  const timestamp = Date.now();
-  const time = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(timestamp)
+
+  let timestamp = Date.now()
+  console.log(timestamp); // get current timestamp
+  let time = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(timestamp)
+  console.log(time); // get current timestamp
+
+  var now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+  console.log(now)
+  // const timestamp = Date.now();
+  // const time = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(timestamp)
   const { user } = useAuth0();
   const { picture, sub } = user;
   const userID = sub;
@@ -106,7 +116,7 @@ export const Header = () => {
       longitude: addPostLocation.longitude,
       visitDate: input.visitDate,
       userID: userID,
-      timestamp: time
+      timestamp: now
     }
     console.log(newPost);
     API.savePost(newPost).catch(e => console.log(e))
