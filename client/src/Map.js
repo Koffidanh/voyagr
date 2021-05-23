@@ -107,16 +107,16 @@ export const Header = () => {
   return (
     <>
       <Nav>
-        <div
-          ref={geocoderContainerRef}
-          style={{ position: "relative", left: 30 }}
-        />
         <div>
           <button className="geoLocater" ref={geolocateControlRef}>My Current Location</button>
         </div>
 
         <NavMenu>
-          <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
+          <div
+            ref={geocoderContainerRef}
+            style={{ position: "relative", right: 95 }}
+          />
+          {/* <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faHome} size="lg" />
           </NavLink>
           <NavLink to="/" exact activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
@@ -124,7 +124,7 @@ export const Header = () => {
           </NavLink>
           <NavLink to="/" exact activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faCog} size="lg" />
-          </NavLink>
+          </NavLink> */}
         </NavMenu>
         <BurgerMenu />
       </Nav>

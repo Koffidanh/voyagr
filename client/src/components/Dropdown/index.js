@@ -17,7 +17,7 @@ const BurgerMenu = (props) => {
         <div className="dropdownDiv">
             <Dropdown className="dropdown" isOpen={dropdownOpen} toggle={toggle} size="lg">
                 <DropdownToggle color="343A40" className="dropdown-icon" >
-                    <FontAwesomeIcon icon={faBars} size="lg" />
+                    <FontAwesomeIcon icon={faBars} className="bars" size="lg" />
                 </DropdownToggle>
                 <DropdownMenu right>
                     <DropdownItem href="/dashboard">Dashboard</DropdownItem>
