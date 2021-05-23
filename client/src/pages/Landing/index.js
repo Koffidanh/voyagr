@@ -1,8 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.css";
-// import { json } from "express";
-import axios from 'axios'
-import { Link } from "react-router-dom";
 import NavbarSignup from "../../components/NavbarSignup";
 import Footer from '../../components/Footer'
 import BackgroundSlider from 'react-background-slider'
@@ -26,10 +23,8 @@ const RegisterUser = () => {
       <BackgroundSlider
         images={[image1, image2, image3, image4, image5, image6, image7]}
         duration={3} transition={2} style={{ maxHeight: '200px' }} />
-
       <Footer />
     </div>
-
   );
 }
 

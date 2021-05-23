@@ -16,5 +16,4 @@ const newPostSchema = new Schema({
 
 const NewPost = mongoose.model('NewPost', newPostSchema);
 
-
 module.exports = NewPost;

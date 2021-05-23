@@ -10,11 +10,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { API } from "../../utils/API"
 var moment = require('moment');
 
-
-
 export default function MessageSender() {
-    let timestamp = Date.now()
-    let time = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(timestamp)
     var now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
 
     const { user } = useAuth0();
@@ -24,7 +20,7 @@ export default function MessageSender() {
 
     function handleChange(event) {
 
-        const { name, value } = event.target
+        const { value } = event.target
         setInput({ ...input, [event.target.name]: value })
     }
 
@@ -71,10 +67,8 @@ export default function MessageSender() {
                                 type="text"
                             />
                         </div>
-
                         <p
                             className="visitDateText"
-
                         >
                             Date Visited:</p>
                         <div
@@ -82,10 +76,10 @@ export default function MessageSender() {
                             style={{ display: "flex", alignItems: "center" }}
                         >
                             <input
-                                name="vistDate"
+                                name="visitDate"
                                 value={input.visitDate}
                                 onChange={handleChange}
-                                className="vistDateInput"
+                                className="visitDateInput"
                                 type="date"
                             />
                         </div>
@@ -102,9 +96,8 @@ export default function MessageSender() {
                             type="text"
                         />
                     </div>
-                    <input class="senderBtn" type="submit" value="Submit" onClick={handleSubmit} />
+                    <input className="senderBtn" type="submit" value="Submit" onClick={handleSubmit} />
                 </form>
-
             </div>
             <div className="messageSender-bottom">
                 <div className="messageSender-icon">
@@ -124,7 +117,6 @@ export default function MessageSender() {
                     Feeling/Activity
                 </div>
             </div>
-
         </div>
     )
 }

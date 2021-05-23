@@ -1,21 +1,20 @@
 .search-div {
-      display: flex;
-      
+  display: flex;
 }
 
 .search-input {
-    display: flex;
-    background-color: rgb(240, 240, 240);
-    align-items: center;
-    padding: 10px;
-    margin: 20px;
-    border-radius: 33px;
+  display: flex;
+  background-color: rgb(240, 240, 240);
+  align-items: center;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 33px;
 }
+
 .search-input > input {
-    border:none;
-    background-color: transparent;
-    outline-width: 0;
-    
+  border:none;
+  background-color: transparent;
+  outline-width: 0;
 }
 
 .fa-search {

@@ -1,63 +1,63 @@
 body {
-    margin: none;
-  }
+  margin: none;
+}
 
-  .geoLocater{
-    background: #61DAFB;
-    padding: 10px 24px; 
-    align-items: center !important;
-    color: #fff;
-    border: 1px solid white;
-    outline: none;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    text-decoration: none;
-    border-radius: 24px !important;
-    width: 14rem !important;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  }
+.geoLocater{
+  background: #61DAFB;
+  padding: 10px 24px; 
+  align-items: center !important;
+  color: #fff;
+  border: 1px solid white;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  border-radius: 24px !important;
+  width: 14rem !important;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
-  .geoLocater:hover { 
-    transform: scale(1.1); 
-    }
+.geoLocater:hover { 
+  transform: scale(1.1); 
+  }
 
 .marker {
-    transform: translate(-50%, -100%);
-  }
+  transform: translate(-50%, -100%);
+}
   
-  .error {
-    color: #61DAFB;
-  }
+.error {
+  color: #61DAFB;
+}
   
-  .marker.react-blue path {
-    fill: #61DAFB;
-  }
+.marker.react-blue path {
+  fill: #61DAFB;
+}
   
-  .marker.yellow path {
-    fill: #F3B73E;
-  }
+.marker.yellow path {
+  fill: #F3B73E;
+}
   
-  .popup {
-    width: 40vw;
-    padding: 1rem;
-  }
+.popup {
+  width: 40vw;
+  padding: 1rem;
+}
   
-  .popup img {
-    height: 200px;
-    width: auto;
-    text-align: center;
-    margin: 0 auto;
-    display: block;
-  }
+.popup img {
+  height: 200px;
+  width: auto;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
   
-  .post-form label,
-  .post-form input,
-  .post-form textarea,
-  .post-form button {
-    font-size: 1rem;
-    margin: 0.5rem 0;
-    display: block;
-    width: 100%;
-  }
+.post-form label,
+.post-form input,
+.post-form textarea,
+.post-form button {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  display: block;
+  width: 100%;
+}

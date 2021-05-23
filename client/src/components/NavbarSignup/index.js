@@ -1,9 +1,8 @@
 import React from 'react'
-import { Nav, NavBtn, NavBtnLink } from "./NavbarElements"
+import { Nav, NavBtn } from "./NavbarElements"
 import "./style.css";
 import LoginButton from '../LoginButton';
 import SignupButton from '../SignupButton';
-
 
 export const NavbarSignup = () => {
 
@@ -15,7 +14,6 @@ export const NavbarSignup = () => {
                     <LoginButton />
                     <SignupButton />
                 </NavBtn>
-
             </Nav>
         </>
     )

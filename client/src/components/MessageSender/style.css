@@ -1,29 +1,20 @@
 .messageSender {
-    background-color: #333333;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, .75);
-    width: 100%;
-      padding: 10px;
-    margin-top: 20px;
-    border-radius: 33px;
+  background-color: #333333;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, .75);
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 33px;
 }
 
 .messageSender-top {
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    border-bottom: 1px solid rgb(200, 200, 200);
-    padding: 20px;
-  }
-
-/* .messageSender-top > form {
-    margin-left: 10px;
-    background-color: rgb(240, 240, 240);
-    padding: 10px;
-    border-radius: 500px;
-    width: 80%;
-} */
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  padding: 20px;
+}
 
 .visitDateText{
   color: white;
@@ -35,45 +26,45 @@
 }
 
 .titleDiv {
-width: 25rem
+  width: 25rem
 }
+
+.titleDiv > input {
+  width: 24rem
+}
+
 .messageInput , .visitDateDiv, .titleDiv {
-    background-color: rgb(240, 240, 240) !important;
-    padding: 10px;
-    border-radius: 500px;
+  background-color: rgb(240, 240, 240) !important;
+  padding: 10px;
+  border-radius: 500px;
   margin-left: 1rem;
 }
 
-
 .messageSender-top > form > div > input {
-
-    border:none;
-    background-color: transparent;
-    outline-width: 0;
-    width: 95%
+  border:none;
+  background-color: transparent;
+  outline-width: 0;
+  width: 95%
 }
 
 .messageSender-top > form > div > div > input {
-
-    border:none;
-    background-color: transparent;
-    outline-width: 0;
-
+  border:none;
+  background-color: transparent;
+  outline-width: 0;
 }
 
 .senderBtn  {
-display:  none;
+  display:  none;
 }
 
 .messageSender-bottom {
   padding-top: 10px;
   display: flex;
   justify-content: space-evenly;
-
 }
 
 .fa-user-circle {
-     color: rgb(190, 190, 190);
+  color: rgb(190, 190, 190);
 }
 
 .fa-images {
@@ -101,7 +92,7 @@ display:  none;
 }
 
 .messageSender-icon:hover {
-background-color: grey;
-border-radius: 20px;
-cursor: pointer;
+  background-color: grey;
+  border-radius: 20px;
+  cursor: pointer;
 }

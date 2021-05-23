@@ -1,10 +1,11 @@
 import React from "react";
+import "./style.css";
 
 const loadingImg =
     "https://cdn.auth0.com/blog/auth0-react-sample/assets/loading.svg";
 
 const Loading = () => (
-    <div className="spinner">
+    <div className="centerSpinner spinner">
         <img src={loadingImg} alt="Loading..." />
     </div>
 );

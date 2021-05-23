@@ -9,7 +9,6 @@ import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
 import { faCog } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { listNewPosts } from './API';
 import "./map.css";
 import { API } from "./utils/API"
 import { useAuth0 } from '@auth0/auth0-react';
@@ -19,6 +18,10 @@ var moment = require('moment');
 
 
 export const Header = () => {
+  const { user } = useAuth0();
+  const { picture, sub } = user;
+  const userID = sub;
+  const [input, setInput] = useState({});
   // const [geoLocate, setGeoLocate] = useState("");
   const [newPosts, setNewPosts] = useState([]);
   const [showPopup, setShowPopup] = useState({});
@@ -41,10 +44,6 @@ export const Header = () => {
     right: 30,
     top: 15
   };
-  const getPosts = async () => {
-    const newPosts = await listNewPosts();
-    setNewPosts(newPosts);
-  };
 
   useEffect(() => {
     const getPosts = async () => {
@@ -56,7 +55,7 @@ export const Header = () => {
       }
     };
     getPosts()
-  }, []);
+  }, [sub]);
 
   const showAddMarkerPopup = (event) => {
     const [longitude, latitude] = event.lngLat;
@@ -71,21 +70,14 @@ export const Header = () => {
         ...geocoderDefaultOverrides
       });
     },
-    []
+    [handleViewportChange]
   );
 
-  let timestamp = Date.now()
-  let time = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(timestamp)
   var now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
-
-  const { user } = useAuth0();
-  const { picture, sub } = user;
-  const userID = sub;
-  const [input, setInput] = useState({});
 
   function handleChange(event) {
 
-    const { name, value } = event.target
+    const { value } = event.target
     setInput({ ...input, [event.target.name]: value })
   }
 
@@ -120,17 +112,17 @@ export const Header = () => {
           style={{ position: "relative", left: 30 }}
         />
         <div>
-          <button class="geoLocater" ref={geolocateControlRef}>My Current Location</button>
+          <button className="geoLocater" ref={geolocateControlRef}>My Current Location</button>
         </div>
 
         <NavMenu>
           <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faHome} size="lg" />
           </NavLink>
-          <NavLink to="/login" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
+          <NavLink to="/" exact activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faUserFriends} size="lg" />
           </NavLink>
-          <NavLink to="/login" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
+          <NavLink to="/" exact activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faCog} size="lg" />
           </NavLink>
         </NavMenu>

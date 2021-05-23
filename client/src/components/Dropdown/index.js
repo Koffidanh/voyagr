@@ -21,13 +21,12 @@ const BurgerMenu = (props) => {
                 </DropdownToggle>
                 <DropdownMenu right>
                     <DropdownItem href="/dashboard">Dashboard</DropdownItem>
-                    <DropdownItem href="/settings">Settings</DropdownItem>
+                    <DropdownItem href="/">Settings</DropdownItem>
                     <DropdownItem onClick={() => logout({ returnTo: window.location.origin })}>Logout</DropdownItem>
                 </DropdownMenu>
             </Dropdown >
         </div>
     );
 }
-
 
 export default BurgerMenu;
