@@ -19,7 +19,7 @@ import { usePosts } from './Contexts/PostContexts';
 var moment = require('moment');
 
 
-export const Header = () => {
+export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewport}) => {
   const { user } = useAuth0();
   const { name, picture, sub } = user;
   const userID = sub;
@@ -27,14 +27,8 @@ export const Header = () => {
   // const [geoLocate, setGeoLocate] = useState("");
   const [newPosts, setNewPosts] = usePosts();
   const [showPopup, setShowPopup] = useState({});
-  const [addPostLocation, setAddPostLocation] = useState(null);
-  const [viewport, setViewport] = useState({
-    width: '100vw',
-    height: '60vh',
-    latitude: 37.6,
-    longitude: -95.665,
-    zoom: 2
-  });
+  
+
   const geocoderContainerRef = useRef();
   const geolocateControlRef = useRef();
   const mapRef = useRef();
@@ -91,7 +85,7 @@ export const Header = () => {
     API.savePost(newPost).catch(e => console.log(e))
     setNewPosts((newPosts) => [newPost, ...newPosts])
   }
-
+  useEffect (()=> console.log(viewport), [viewport])
   // function geolocateToggle(e) {
   //   e.preventDefault;
   //   setGeoLocate(trackUserLocation = true)
@@ -100,14 +94,12 @@ export const Header = () => {
   return (
     <>
       <Nav>
-        <div>
-          <button className="geoLocater" ref={geolocateControlRef}>My Current Location</button>
+        <NavMenu> <div>
+          {/* <button className="geoLocater" ref={geolocateControlRef}>My Current Location</button> */}
         </div>
-
-        <NavMenu>
           <div
             ref={geocoderContainerRef}
-            style={{ position: "relative", right: 95 }}
+            style={{ position: "relative" }}
           />
           {/* <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faHome} size="lg" />
@@ -137,7 +129,7 @@ export const Header = () => {
           containerRef={geolocateControlRef}
           positionOptions={{ enableHighAccuracy: true }}
           trackUserLocation={true}
-        // auto
+          auto
         />
         <Geocoder
           mapRef={mapRef}

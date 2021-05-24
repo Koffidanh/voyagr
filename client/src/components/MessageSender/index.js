@@ -14,7 +14,7 @@ import axios from 'axios';
 
 var moment = require('moment');
 
-export default function MessageSender() {
+export default function MessageSender({ addPostLocation, setAddPostLocation, viewport, setViewport }) {
     let timestamp = Date.now()
     var now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
 
@@ -41,8 +41,8 @@ export default function MessageSender() {
             title: input.title,
             description: input.description,
             image: input.image,
-            latitude: placeholderLat,
-            longitude: placeholderLong,
+            latitude: addPostLocation?.latitude || viewport.latitude,
+            longitude: addPostLocation?.longitude || viewport.longitude,
             visitDate: input.visitDate,
             userID: userID,
             date: now,
@@ -55,7 +55,7 @@ export default function MessageSender() {
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShow = () => setAddPostLocation({latitude: addPostLocation?.latitude || viewport.latitude,  longitude: addPostLocation?.longitude || viewport.longitude});
     const [imageSelected, setImageSelected] = useState("");
     const uploadImage = () => {
         const formData = new FormData()
