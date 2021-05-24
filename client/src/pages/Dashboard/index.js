@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Header from "../../Map"
 import MessageSender from "../../components/MessageSender"
 import Feed from "../../components/Feed";
@@ -15,11 +15,11 @@ function DashboardPage() {
   });
   return (
     <div
-      style={{ backgroundColor: "#F7F7F7" }}
+      style={{ backgroundColor: "lightgray" }}
     >
-      <Header addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport}/>
+      <Header addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport} />
       <Feed>
-        <MessageSender addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport}/>
+        <MessageSender addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport} />
         <Post />
       </Feed>
     </div>

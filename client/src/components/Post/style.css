@@ -34,7 +34,7 @@
   color: white;
   display: flex;
   justify-content: space-evenly;
-  border-top: 1px solid gray;
+  border-top: 2px solid #61DAFB;
   cursor: pointer;
 
 }

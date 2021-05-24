@@ -6,22 +6,19 @@ body {
   border-radius: 24px !important;
   padding: 4px;
   width: 8rem !important;
+  background-color: #D3D3D3;
+  border: 2px solid white;
 }
 
 a:hover {
   color: #61DAFB;
-}
-.mapboxgl-ctrl-geocoder {
-  border-radius: 24px !important;
-  padding: 4px;
-  width: 8rem !important;
 }
 
 .geoLocater{
   background: #61DAFB;
   padding: 10px 24px; 
   align-items: center !important;
-  color: #fff;
+  color: "#fff";
   border: 1px solid white;
   outline: none;
   cursor: pointer;
@@ -83,3 +80,4 @@ a:hover {
   top: -5rem;
   position: relative;
 }
+
