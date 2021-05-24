@@ -3,26 +3,12 @@ import "./style.css"
 import { useAuth0 } from '@auth0/auth0-react';
 import { API } from "../../utils/API"
 import Message from '../Message'
+import { usePosts } from '../../Contexts/PostContexts';
 
 export default function Post(profileImage) {
     const { user } = useAuth0();
     const { name, picture } = user;
-    const [messages, setMessages] = useState(
-        []
-    )
-
-    useEffect(() => {
-
-        API.getPost(user.sub)
-            .then(res =>
-                setMessages(res.data)
-            )
-            .catch(err => console.log(err));
-    }, [user.sub]);
-
-    useEffect(() => {
-        console.log(messages)
-    }, [messages]);
+    const [messages, setMessages] = usePosts();
 
     return (
         messages

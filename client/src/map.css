@@ -76,3 +76,10 @@ a:hover {
   display: block;
   width: 100%;
 }
+
+.profileName {
+  display: flex;
+  justify-content: center;
+  top: -5rem;
+  position: relative;
+}
