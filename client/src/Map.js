@@ -15,16 +15,17 @@ import { API } from "./utils/API"
 import { useAuth0 } from '@auth0/auth0-react';
 import ProfileImage from './components/ProfileImage';
 import axios from "axios"
+import { usePosts } from './Contexts/PostContexts';
 var moment = require('moment');
 
 
 export const Header = () => {
   const { user } = useAuth0();
-  const { picture, sub } = user;
+  const { name, picture, sub } = user;
   const userID = sub;
   const [input, setInput] = useState({});
   // const [geoLocate, setGeoLocate] = useState("");
-  const [newPosts, setNewPosts] = useState([]);
+  const [newPosts, setNewPosts] = usePosts();
   const [showPopup, setShowPopup] = useState({});
   const [addPostLocation, setAddPostLocation] = useState(null);
   const [viewport, setViewport] = useState({
@@ -45,18 +46,6 @@ export const Header = () => {
     right: 30,
     top: 15
   };
-
-  useEffect(() => {
-    const getPosts = async () => {
-      try {
-        const res = await axios.get("/api/dashboard/" + sub)
-        setNewPosts(res.data)
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getPosts()
-  }, [sub]);
 
   const showAddMarkerPopup = (event) => {
     const [longitude, latitude] = event.lngLat;
@@ -91,8 +80,8 @@ export const Header = () => {
       title: input.title,
       description: input.description,
       image: input.image,
-      latitude: parseFloat(addPostLocation.latitude).toFixed(2),
-      longitude: parseFloat(addPostLocation.longitude).toFixed(2),
+      latitude: parseFloat(addPostLocation.latitude),
+      longitude: parseFloat(addPostLocation.longitude),
       visitDate: input.visitDate,
       userID: userID,
       date: now,
@@ -100,6 +89,7 @@ export const Header = () => {
     }
     console.log(newPost);
     API.savePost(newPost).catch(e => console.log(e))
+    setNewPosts((newPosts) => [newPost, ...newPosts])
   }
 
   // function geolocateToggle(e) {
@@ -272,6 +262,11 @@ export const Header = () => {
       <ProfileImage
         avatarImage={picture}
       />
+      <h2
+        // style={{  }}
+        className="profileName">
+        {name}
+      </h2>
     </>
   )
 }
