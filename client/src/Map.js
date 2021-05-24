@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl';
@@ -14,8 +14,8 @@ import "./map.css";
 import { API } from "./utils/API"
 import { useAuth0 } from '@auth0/auth0-react';
 import ProfileImage from './components/ProfileImage';
-import axios from "axios"
 import { usePosts } from './Contexts/PostContexts';
+
 var moment = require('moment');
 
 
@@ -24,7 +24,6 @@ export const Header = () => {
   const { name, picture, sub } = user;
   const userID = sub;
   const [input, setInput] = useState({});
-  // const [geoLocate, setGeoLocate] = useState("");
   const [newPosts, setNewPosts] = usePosts();
   const [showPopup, setShowPopup] = useState({});
   const [addPostLocation, setAddPostLocation] = useState(null);
@@ -92,34 +91,36 @@ export const Header = () => {
     setNewPosts((newPosts) => [newPost, ...newPosts])
   }
 
-  // function geolocateToggle(e) {
-  //   e.preventDefault;
-  //   setGeoLocate(trackUserLocation = true)
-  // }
-
   return (
     <>
       <Nav>
+
         <div>
           <button className="geoLocater" ref={geolocateControlRef}>My Current Location</button>
         </div>
 
+
+
         <NavMenu>
           <div
+            className="geocoder"
             ref={geocoderContainerRef}
-            style={{ position: "relative", right: 95 }}
+          // style={{ position: "relative", right: 95 }}
           />
           {/* <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faHome} size="lg" />
-          </NavLink>
-          <NavLink to="/" exact activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
+            </NavLink>
+            <NavLink to="/" exact activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faUserFriends} size="lg" />
-          </NavLink>
-          <NavLink to="/" exact activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
+            </NavLink>
+            <NavLink to="/" exact activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faCog} size="lg" />
           </NavLink> */}
         </NavMenu>
+
+
         <BurgerMenu />
+
       </Nav>
       <ReactMapGL
         ref={mapRef}
