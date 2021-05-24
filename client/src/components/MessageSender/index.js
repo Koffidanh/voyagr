@@ -9,6 +9,9 @@ import Avatar from '../Avatar';
 import { useAuth0 } from '@auth0/auth0-react';
 import { API } from "../../utils/API"
 import { usePosts } from '../../Contexts/PostContexts';
+import Modal from 'react-bootstrap/Modal';
+import axios from 'axios';
+
 var moment = require('moment');
 
 export default function MessageSender() {
@@ -48,6 +51,19 @@ export default function MessageSender() {
         console.log(newPost);
         API.savePost(newPost).catch(e => console.log(e))
         setPosts((newPosts) => [newPost, ...newPosts])
+    }
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const [imageSelected, setImageSelected] = useState("");
+    const uploadImage = () => {
+        const formData = new FormData()
+        formData.append("file", imageSelected)
+        formData.append("upload_preset", "cq3jaudf")
+
+        // axios.post("https://api.cloudinary.com/v1_1/voyagr/image/upload", formData).then((res) => console.log(res))
+
     }
 
     return (
@@ -106,13 +122,41 @@ export default function MessageSender() {
                     </form>
                 </div>
                 <div className="messageSender-bottom">
-                    <div className="messageSender-icon">
+                    <div className="messageSender-icon" variant="primary" onClick={handleShow}>
                         <FontAwesomeIcon icon={faMapPin} size="2x" style={{ marginRight: 7 }} />
                     Pin
                 </div>
-                    <div className="messageSender-icon">
-                        <FontAwesomeIcon icon={faImages} size="2x" style={{ marginRight: 7 }} />
-                    Upload Image
+                <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Enter Your Location</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Enter your Location!</Modal.Body>
+                    <Modal.Footer>
+
+                        {/* <Button   variant="secondary" onClick={useRef }>
+                            Pick Image
+            </Button>
+                        <Button  variant="primary" onClick={handleClose, uploadImage()}>
+                            Upload Image
+            </Button> */}
+                    </Modal.Footer>
+                </Modal>
+
+ {/* <input  type= "file"
+                onChange={(event) => {
+                    setImageSelected(event.target.files[0]);
+                }} 
+                 /> */}
+
+                {/* <button onClick = {uploadImage}>uplo</button> */}
+
+                   <div className="messageSender-icon "   >
+                <FontAwesomeIcon icon={faImages} size="2x" style={{ marginRight: 7 }} />
+                <input type="file" className= "file"/>
+                {/* <label for="file"  > Select File</label> */}
+                Upload Image
+                    
+                   
                 </div>
                     <div className="messageSender-icon">
                         <FontAwesomeIcon icon={faVideo} size="2x" style={{ marginRight: 7 }} />
