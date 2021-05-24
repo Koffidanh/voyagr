@@ -10,7 +10,7 @@ justify-content: space-between;
 padding: 0.5rem calc((100vw-1000px) / 2);
 z-index: 10;
 align-items: center;
-border-bottom: 1px solid #61DAFB;
+border-bottom: 3px solid #61DAFB;
 `;
 
 export const NavLink = styled(Link)`

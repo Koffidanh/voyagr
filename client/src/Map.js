@@ -14,12 +14,12 @@ import "./map.css";
 import { API } from "./utils/API"
 import { useAuth0 } from '@auth0/auth0-react';
 import ProfileImage from './components/ProfileImage';
-import axios from "axios"
+// import axios from "axios"
 import { usePosts } from './Contexts/PostContexts';
 var moment = require('moment');
 
 
-export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewport}) => {
+export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewport }) => {
   const { user } = useAuth0();
   const { name, picture, sub } = user;
   const userID = sub;
@@ -27,7 +27,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
   // const [geoLocate, setGeoLocate] = useState("");
   const [newPosts, setNewPosts] = usePosts();
   const [showPopup, setShowPopup] = useState({});
-  
+
 
   const geocoderContainerRef = useRef();
   const geolocateControlRef = useRef();
@@ -85,7 +85,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
     API.savePost(newPost).catch(e => console.log(e))
     setNewPosts((newPosts) => [newPost, ...newPosts])
   }
-  useEffect (()=> console.log(viewport), [viewport])
+  useEffect(() => console.log(viewport), [viewport])
   // function geolocateToggle(e) {
   //   e.preventDefault;
   //   setGeoLocate(trackUserLocation = true)
@@ -99,7 +99,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
         </div>
           <div
             ref={geocoderContainerRef}
-            style={{ position: "relative" }}
+            style={{ position: "relative", left: 50 }}
           />
           {/* <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faHome} size="lg" />
@@ -129,7 +129,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
           containerRef={geolocateControlRef}
           positionOptions={{ enableHighAccuracy: true }}
           trackUserLocation={true}
-          auto
+        // auto
         />
         <Geocoder
           mapRef={mapRef}
@@ -255,7 +255,6 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
         avatarImage={picture}
       />
       <h2
-        // style={{  }}
         className="profileName">
         {name}
       </h2>
