@@ -21,7 +21,7 @@ class PhotoList extends Component {
                         Upload an Image
                     </button>
                 </div>
-                <div className="photos">
+                {/* <div className="photos">
                     {this.props.photos.length === 0}
                     {this.props.photos.map(photo => {
                         return (
@@ -31,7 +31,7 @@ class PhotoList extends Component {
                             />
                         );
                     })}
-                </div>
+                </div> */}
             </div>
         );
     }
@@ -45,6 +45,9 @@ class PhotoList extends Component {
                 const { event, info } = result;
                 if (event === "success") {
                     this.props.onPhotosUploaded([info]);
+
+                    this.props.setImage(prevState => [...prevState, info.secure_url])
+                    console.log(result)
                 }
             } else {
                 console.log(error);

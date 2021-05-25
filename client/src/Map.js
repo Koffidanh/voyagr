@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import PhotoListContainer from "./components/PhotoList";
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl';
@@ -14,12 +15,12 @@ import "./map.css";
 import { API } from "./utils/API"
 import { useAuth0 } from '@auth0/auth0-react';
 import ProfileImage from './components/ProfileImage';
-// import axios from "axios"
 import { usePosts } from './Contexts/PostContexts';
+// import axios from "axios"
 var moment = require('moment');
 
 
-export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewport }) => {
+export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewport, images }) => {
   const { user } = useAuth0();
   const { name, picture, sub } = user;
   const userID = sub;
@@ -27,7 +28,8 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
   // const [geoLocate, setGeoLocate] = useState("");
   const [newPosts, setNewPosts] = usePosts();
   const [showPopup, setShowPopup] = useState({});
-
+  const [posts, setPosts] = usePosts();
+  const [image, setImage] = useState([]);
 
   const geocoderContainerRef = useRef();
   const geolocateControlRef = useRef();
@@ -73,7 +75,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
     const newPost = {
       title: input.title,
       description: input.description,
-      image: input.image,
+      image: image,
       latitude: parseFloat(addPostLocation.latitude),
       longitude: parseFloat(addPostLocation.longitude),
       visitDate: input.visitDate,
@@ -85,7 +87,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
     API.savePost(newPost).catch(e => console.log(e))
     setNewPosts((newPosts) => [newPost, ...newPosts])
   }
-  useEffect(() => console.log(viewport), [viewport])
+  // useEffect(() => console.log(viewport), [viewport])
   // function geolocateToggle(e) {
   //   e.preventDefault;
   //   setGeoLocate(trackUserLocation = true)
@@ -183,7 +185,9 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
                       <p> {post.latitude}, {post.longitude} </p>
 
                       <small>Visited on: {new Date(post.visitDate).toLocaleDateString()}</small>
-                      {post.image && <img src={post.image} alt={post.title} />}
+                      {/* {post.image && <img src={post.image} alt={post.title} />} */}
+                      {/* {JSON.stringify(post)} */}
+                      {post.image.length > 0 && post.image.map(img => <img src={img} alt={post.title} />)}
                     </div>
                   </Popup>
                 ) : null
@@ -234,10 +238,15 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
                       onChange={handleChange}
                     />
                     <label htmlFor="image">Image</label>
-                    <input name="image"
+                    <div className="popupImages">
+                      <PhotoListContainer
+                        setImage={setImage}
+                      />
+                    </div>
+                    {/* <input name="image"
                       value={input.image}
                       onChange={handleChange}
-                    />
+                    /> */}
                     <label htmlFor="visitDate">Visit Date</label>
                     <input name="visitDate" type="date"
                       value={input.visitDate}

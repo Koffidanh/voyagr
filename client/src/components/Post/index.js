@@ -19,7 +19,7 @@ export default function Post(profileImage) {
                     username={name}
                     date={message.date}
                     description={message.description}
-                    image={message.image}
+                    images={message.image}
                 />)
 
     )

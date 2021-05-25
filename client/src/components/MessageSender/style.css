@@ -52,7 +52,7 @@
   border:none;
   background-color: transparent;
   outline-width: 0;
- width: 100%
+   width: 100%;
 }
 
 .descriptionInput {
@@ -186,7 +186,7 @@ margin-top: 0;
 }
 
 .fa-images {
-  color: rgb(0, 163, 204);
+  color: #61DAFB;
 }
 
 .fa-video {
