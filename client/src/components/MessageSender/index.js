@@ -9,8 +9,9 @@ import Avatar from '../Avatar';
 import { useAuth0 } from '@auth0/auth0-react';
 import { API } from "../../utils/API"
 import { usePosts } from '../../Contexts/PostContexts';
-import { Container, Col } from '../Grid';
-import PhotoListContainer from "../../components/PhotoList";
+import { Col } from '../Grid';
+import Container from "../Container";
+import PhotoListContainer from "../PhotoList";
 
 var moment = require('moment');
 
