@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./style.css";
 import { faImages } from '@fortawesome/free-solid-svg-icons'
 import { faVideo } from '@fortawesome/free-solid-svg-icons'
@@ -23,6 +23,7 @@ export default function MessageSender({ addPostLocation, setAddPostLocation, vie
     const userID = sub;
     const [input, setInput] = useState({});
     const [posts, setPosts] = usePosts();
+    const [image, setImage] = useState([]);
 
     function handleChange(event) {
 
@@ -32,12 +33,11 @@ export default function MessageSender({ addPostLocation, setAddPostLocation, vie
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setInput({ title: "", description: "", image: "", visitDate: "" })
 
         const newPost = {
             title: input.title,
             description: input.description,
-            image: input.image,
+            image: image,
             latitude: addPostLocation?.latitude || viewport.latitude,
             longitude: addPostLocation?.longitude || viewport.longitude,
             visitDate: input.visitDate,
@@ -46,13 +46,17 @@ export default function MessageSender({ addPostLocation, setAddPostLocation, vie
             timestamp: timestamp
         }
         console.log(newPost);
-        API.savePost(newPost).catch(e => console.log(e))
+        API.savePost(newPost).then(() => {
+            setInput({ title: "", description: "", visitDate: "" })
+            setImage([])
+        }).catch(e => console.log(e))
         setPosts((newPosts) => [newPost, ...newPosts])
     }
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setAddPostLocation({ latitude: addPostLocation?.latitude || viewport.latitude, longitude: addPostLocation?.longitude || viewport.longitude });
+
 
     return (
         <>
@@ -122,7 +126,9 @@ export default function MessageSender({ addPostLocation, setAddPostLocation, vie
                         </div>
                             <div className="messageSender-icon ">
                                 <FontAwesomeIcon icon={faImages} size="2x" />
-                                <PhotoListContainer />
+                                <PhotoListContainer
+                                    setImage={setImage}
+                                />
                             </div>
                         </div>
                         <div className="icons-row-second">

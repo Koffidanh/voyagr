@@ -81,3 +81,10 @@ a:hover {
   position: relative;
 }
 
+.popupImages {
+    background-color: #333333 !important;
+  /* padding: 1px; */
+  /* width: 5rem; */
+  height: 3rem;
+  border-radius: 24px;
+}

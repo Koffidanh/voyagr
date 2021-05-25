@@ -5,7 +5,7 @@ import { faShare } from '@fortawesome/free-solid-svg-icons'
 import { faCommentAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function Message({ username, date, description, image, title, profileImage }) {
+export default function Message({ username, date, description, images, title, profileImage }) {
     return (
         <div className="post" >
             <div className="post-top">
@@ -24,7 +24,7 @@ export default function Message({ username, date, description, image, title, pro
                     <p>{description}</p>
                 </div>
                 <div className="post-image">
-                    <img src={image} alt="" />
+                    {images.length > 0 && images.map(image => <img src={image} alt="" />)}
                 </div>
                 <div className="post-options">
                     <div className="post-icon">
