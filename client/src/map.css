@@ -40,11 +40,11 @@ a:hover {
 }
   
 .error {
-  color: #61DAFB;
+  color: #FE7A02;
 }
   
 .marker.react-blue path {
-  fill: #61DAFB;
+  fill: #FE7A02;
 }
   
 .marker.yellow path {
