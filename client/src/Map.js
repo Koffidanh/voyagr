@@ -96,12 +96,20 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
   return (
     <>
       <Nav>
-        <NavMenu> <div>
-          {/* <button className="geoLocater" ref={geolocateControlRef}>My Current Location</button> */}
-        </div>
+      <img
+        src="/voyagr.png"
+        // width="30"
+        height="60"
+        className="voyagr-logo"
+        alt="Voyagr logo"
+      />
+        <NavMenu>
+          {/* <div>
+            <button className="geoLocater" ref={geolocateControlRef}>My Current Location</button>
+          </div> */}
           <div
             ref={geocoderContainerRef}
-            style={{ position: "relative", left: 50 }}
+            style={{ position: "relative", right: 100 }}
           />
           {/* <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
             <FontAwesomeIcon icon={faHome} size="lg" />
@@ -162,7 +170,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
                     version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512">
                     <g>
                       <g>
-                        <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/>
+                        <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z" />
                       </g>
                     </g>
                   </svg>
@@ -212,7 +220,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
                     version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512">
                     <g>
                       <g>
-                        <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/>
+                        <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z" />
                       </g>
                     </g>
                   </svg>
