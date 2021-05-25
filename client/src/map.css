@@ -31,6 +31,23 @@ body {
   }
 }
 
+@media (min-width: 360px) {
+  .popup , .popup > div, .popup > button {
+    height: 90vw !important;
+    width: 50vw !important;
+  padding: 1rem;
+  }
+}
+
+@media (min-width: 360px) {
+  .popupImages ,  .popupImages > div, .popupImages {
+    size: 10%;
+    
+  ;
+  }
+}
+
+
 .mapboxgl-ctrl-geocoder {
   border-radius: 24px !important;
   padding: 4px;
@@ -109,6 +126,7 @@ a:hover {
   top: -5rem;
   position: relative;
 }
+
 
 .popupImages {
     background-color: #333333 !important;
