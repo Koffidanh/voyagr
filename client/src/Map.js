@@ -16,6 +16,8 @@ import { API } from "./utils/API"
 import { useAuth0 } from '@auth0/auth0-react';
 import ProfileImage from './components/ProfileImage';
 import { usePosts } from './Contexts/PostContexts';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 // import axios from "axios"
 var moment = require('moment');
 
@@ -92,6 +94,26 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
   //   e.preventDefault;
   //   setGeoLocate(trackUserLocation = true)
   // }
+
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
 
   return (
     <>
@@ -195,7 +217,9 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
                       <small>Visited on: {new Date(post.visitDate).toLocaleDateString()}</small>
                       {/* {post.image && <img src={post.image} alt={post.title} />} */}
                       {/* {JSON.stringify(post)} */}
+                      <Carousel responsive={responsive}>
                       {post.image.length > 0 && post.image.map(img => <img src={img} alt={post.title} />)}
+                      </Carousel>
                     </div>
                   </Popup>
                 ) : null
