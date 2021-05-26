@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/Kayvonk/voyagr#readme",
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
@@ -53,6 +54,7 @@
     "react-map-gl": "^6.1.15",
     "react-map-gl-geocoder": "^2.1.6",
     "react-multi-carousel": "^2.6.3",
-    "react-scripts": "^4.0.3"
+    "react-scripts": "^4.0.3",
+    "react-scroll": "^1.8.2"
   }
 }
