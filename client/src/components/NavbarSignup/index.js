@@ -9,7 +9,7 @@ export const NavbarSignup = () => {
     return (
         <>
             <Nav>
-                <Col size="md-8">
+                <Col size="md-12">
                     <img
                         style={{ marginTop: 20 }}
                         src="/voyagr.png"
@@ -19,7 +19,7 @@ export const NavbarSignup = () => {
                         alt="Voyagr logo"
                     />
                 </Col>
-                <Col size="md-8">
+                <Col size="md-12">
 
                 </Col>
 
