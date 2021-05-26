@@ -9,8 +9,14 @@ export const NavbarSignup = () => {
     return (
         <>
             <Nav>
-                <h1>Voyagr Logo</h1>
-                <NavBtn>
+                <img
+                    src="/voyagr.png"
+                    // width="30"
+                    height="60"
+                    className="voyagr-logo"
+                    alt="Voyagr logo"
+                />
+                <NavBtn >
                     <LoginButton />
                     <SignupButton />
                 </NavBtn>

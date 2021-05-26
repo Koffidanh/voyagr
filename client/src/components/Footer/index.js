@@ -4,7 +4,13 @@ import "./style.css";
 function Footer() {
   return (
     <footer className="footer">
-      <span>Voyagr Logo</span>
+      <img
+        src="/voyagr.png"
+        // width="30"
+        height="60"
+        className="voyagr-logo"
+        alt="Voyagr logo"
+      />
     </footer>
   );
 }
