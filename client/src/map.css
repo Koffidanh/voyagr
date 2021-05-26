@@ -2,10 +2,6 @@ body {
   margin: none;
 }
 
-/* .voyagr-logo {
-  margin-left: 25px;
-} */
-
 @media (min-width: 768px) {
   .voyagr-logo {
     margin-left: 25px;
@@ -31,7 +27,10 @@ body {
   }
 }
 
-@media (min-width: 360px) {
+
+/* -------------------------------------------- */
+
+/* @media (min-width: 360px) {
   .popup , .popup > div, .popup > button {
     height: 90vw !important;
     width: 50vw !important;
@@ -45,8 +44,9 @@ body {
     
   ;
   }
-}
+} */
 
+/* --------------------------------------------- */
 
 .mapboxgl-ctrl-geocoder {
   border-radius: 24px !important;
@@ -120,18 +120,52 @@ a:hover {
   width: 100%;
 }
 
+/* ---------Profile Name------------ */
+
 .profileName {
   display: flex;
   justify-content: center;
-  top: -5rem;
+  top: -2rem;
   position: relative;
 }
 
 
-.popupImages {
-    background-color: #333333 !important;
-  /* padding: 1px; */
-  /* width: 5rem; */
+@media (max-width: 576px) {
+ .profileName  {
+  top: -3rem;
+  }
+}
+
+@media (min-width: 576px) {
+ .profileName  {
+  top: -3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .profileName  {
+top: -5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+   .profileName  {
+   top: -5rem;
+  }
+}
+
+/* ----------------------------- */
+.upload_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem
+}
+
+ .popupImages {
+  justify-content: center;
+  width: 100% !important;
+  background-color: #333333 !important;
   height: 3rem;
   border-radius: 24px;
-}
+} 

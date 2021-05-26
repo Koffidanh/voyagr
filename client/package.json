@@ -30,6 +30,7 @@
     "react-json-pretty": "^2.2.0",
     "react-map-gl": "^6.1.13",
     "react-map-gl-geocoder": "^2.1.6",
+    "react-multi-carousel": "^2.6.3",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",

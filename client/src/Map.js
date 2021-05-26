@@ -18,7 +18,6 @@ import ProfileImage from './components/ProfileImage';
 import { usePosts } from './Contexts/PostContexts';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-// import axios from "axios"
 var moment = require('moment');
 
 
@@ -118,13 +117,13 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
   return (
     <>
       <Nav>
-      <img
-        src="/voyagr.png"
-        // width="30"
-        height="60"
-        className="voyagr-logo"
-        alt="Voyagr logo"
-      />
+        <img
+          src="/voyagr.png"
+          // width="30"
+          height="60"
+          className="voyagr-logo"
+          alt="Voyagr logo"
+        />
         <NavMenu>
           {/* <div>
             <button className="geoLocater" ref={geolocateControlRef}>My Current Location</button>
@@ -212,13 +211,19 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
                       <h3>{post.title}</h3>
                       <p>{post.description}</p>
                       <h6>Latitude, Longitude:</h6>
-                      <p> {post.latitude}, {post.longitude} </p>
+                      <p> {post.latitude.toFixed(2)}, {post.longitude.toFixed(2)} </p>
 
                       <small>Visited on: {new Date(post.visitDate).toLocaleDateString()}</small>
                       {/* {post.image && <img src={post.image} alt={post.title} />} */}
                       {/* {JSON.stringify(post)} */}
-                      <Carousel responsive={responsive}>
-                      {post.image.length > 0 && post.image.map(img => <img src={img} alt={post.title} />)}
+                      <Carousel
+                        swipeable={true}
+                        draggable={false}
+                        showDots={true}
+                        responsive={responsive}
+                        infinite={true}
+                      >
+                        {post.image.length > 0 && post.image.map(img => <img src={img} alt={post.title} />)}
                       </Carousel>
                     </div>
                   </Popup>
@@ -272,18 +277,28 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
                     <label htmlFor="image">Image</label>
                     <div className="popupImages">
                       <PhotoListContainer
+                        style={{ justifyContent: "center" }}
                         setImage={setImage}
                       />
                     </div>
-                    {/* <input name="image"
-                      value={input.image}
-                      onChange={handleChange}
-                    /> */}
                     <label htmlFor="visitDate">Visit Date</label>
-                    <input name="visitDate" type="date"
+                    <input
+                      type="text"
+                      onFocus={
+                        (e) => {
+                          e.currentTarget.type = "date";
+                          e.currentTarget.focus();
+                        }
+                      }
+                      placeholder="Date"
+                      name="visitDate"
                       value={input.visitDate}
-                      onChange={handleChange}
                     />
+
+
+                    {/* <input placeholder="Date" class="textbox-n" onBlue="(this.type = 'text')" onFocus="(this.type = 'date')" id="date" name="visitDate" value={input.visitDate}></input> */}
+
+                    {/* <input name="visitDate" type="date" value={input.visitDate} onChange={handleChange} /> */}
                     <input type="submit" value="Submit" />
                   </form>
                 </div>

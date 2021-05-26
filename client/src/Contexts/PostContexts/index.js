@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { API } from "../../utils/API";
 
 const initialState = []
