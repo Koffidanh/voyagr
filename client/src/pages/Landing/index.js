@@ -8,7 +8,7 @@ import PlacesToVisit from '../../components/About/AboutCards';
 import Footer from '../../components/Footer';
 import Image from '../../assets/images/bg.png';
 
-const RegisterUser = ()  => {
+const RegisterUser = () => {
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,8 +16,8 @@ const RegisterUser = ()  => {
       backgroundImage: `url(${Image})`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-  },
-  })); 
+    },
+  }));
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -35,13 +35,6 @@ export default RegisterUser;
 
 
 // Slider Image Imports 
-// import image1 from '../../assets/images/image1.png'
-// import image2 from '../../assets/images/image2.png'
-// import image3 from '../../assets/images/image3.png'
-// import image4 from '../../assets/images/image4.png'
-// import image5 from '../../assets/images/image5.png'
-// import image6 from '../../assets/images/image6.png'
-// import image7 from '../../assets/images/image7.png'
 
 {/* <BackgroundSlider
 images={[image1, image2, image3, image4, image5, image6, image7]}

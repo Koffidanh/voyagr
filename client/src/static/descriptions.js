@@ -1,4 +1,6 @@
-import image1 from '../assets/images/image1.png';
+const image1 = ""
+
+// add image url
 
 const description = [
   {
