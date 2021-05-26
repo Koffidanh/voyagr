@@ -7,19 +7,20 @@ import { photosUploaded } from '../actions';
 import Photo from './Photo';
 // import FacebookImage from './FacebookImage';
 import { CloudinaryContext } from 'cloudinary-react';
+// import "./MessageSender/style.css"
+
 
 class PhotoList extends Component {
     render() {
         return (
             <div className="photoList">
                 <div className="actions">
-                    <button
+                    <div
                         className="upload_link"
-
                         onClick={this.uploadImageWithCloudinary.bind(this)}
                     >
-                        Upload an Image
-                    </button>
+                        Upload Images
+                    </div>
                 </div>
                 {/* <div className="photos">
                     {this.props.photos.length === 0}

@@ -7,7 +7,7 @@ export default function ProfileImage({ avatarImage }) {
     return (
 
         <div className="imageDiv" >
-            <img className="profileImage" src={avatarImage} alt="" style={{ width: 200, borderRadius: 1000 }} />
+            <img className="profileImage" src={avatarImage} alt="" style={{ borderRadius: 1000 }} />
         </div>
     )
 }

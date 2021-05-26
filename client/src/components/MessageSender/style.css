@@ -45,10 +45,34 @@
   padding: 20px;
 }
 
+/* -----Popup Image Upload Link------------- */
+
+  .upload_link {
+    color: white;
+  }
+
+
+@media (max-width: 576px) {
+  .upload_link {
+    font-size: small;
+  }
+}
+
+@media (max-width: 476px) {
+.upload_link {
+font-size: x-small;
+}
+}
+
+@media (min-width: 576px) {
+.upload_link {
+font-size: medium;
+}
+}
+
 /* ----------------Hide Inputs------------- */
 
-
-.visitDateInput, .titleInput, .upload_link {
+.visitDateInput, .titleInput {
   border:none;
   background-color: transparent;
   outline-width: 0;
@@ -204,7 +228,7 @@ margin-top: 0;
   margin-right: 5px;
 }
 
-.messageSender-icon, .upload_link {
+.messageSender-icon {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   align-items: center;
   display: flex;
