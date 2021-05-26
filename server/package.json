@@ -4,9 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start": "node server.js",
+    "client": "cd ../client && npm run start",
+    "install": "cd ../client && npm install",
+    "build": "cd ../client && npm run build",
+    "seed": "node scripts/newPostsSeedDB.js",
+    "server": "node server.js",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install cd ../client"
   },
   "repository": {
