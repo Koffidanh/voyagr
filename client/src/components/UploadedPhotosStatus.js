@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import request from 'superagent';
 import { deleteUploadedPhoto } from '../actions';
-import {CloudinaryContext} from "cloudinary-react";
+import { CloudinaryContext } from "cloudinary-react";
 
 class UploadedPhotoStatus extends Component {
     render() {
@@ -43,14 +43,14 @@ class UploadedPhotoStatus extends Component {
                     <div className="info">
                         <table>
                             <tbody>
-                            {Object.keys(data).map(key => {
-                                return (
-                                    <tr key={key}>
-                                        <td>{key}</td>
-                                        <td>{JSON.stringify(data[key])}</td>
-                                    </tr>
-                                );
-                            })}
+                                {Object.keys(data).map(key => {
+                                    return (
+                                        <tr key={key}>
+                                            <td>{key}</td>
+                                            <td>{JSON.stringify(data[key])}</td>
+                                        </tr>
+                                    );
+                                })}
                             </tbody>
                         </table>
                     </div>
@@ -62,8 +62,7 @@ class UploadedPhotoStatus extends Component {
     deletePhoto() {
         request
             .post(
-                `https://api.cloudinary.com/v1_1/${
-                    this.context.cloudName
+                `https://api.cloudinary.com/v1_1/${this.context.cloudName
                 }/delete_by_token`
             )
             .set('Content-Type', 'application/json')

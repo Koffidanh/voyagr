@@ -15,7 +15,7 @@ export const openUploadWidget = (options, callback) => {
     window.cloudinary.openUploadWidget(options, callback);
 };
 
-export const fetchPhotos = voyagr => {
+export const fetchPhotos = hummnlftr => {
     // instead of maintaining the list of images, we rely on the 'myphotoalbum' tag
     // and simply retrieve a list of all images with that tag.
     // the version property is used for cache bust (lists are cached by the CDN for 1 minute)
@@ -24,7 +24,7 @@ export const fetchPhotos = voyagr => {
     // for demonstration purposes only
     // *************************************************************************
     const options = {
-        cloudName: voyagr,
+        cloudName: hummnlftr,
         format: 'json',
         type: 'list',
         version: Math.ceil(new Date().getTime() / 1000),

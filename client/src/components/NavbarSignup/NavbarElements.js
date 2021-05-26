@@ -27,22 +27,21 @@ cursor: pointer;
 
 export const NavMenu = styled.div`
 display: flex;
-align-items: right;
-margin-left: auto;
-margin-right: auto;
+align-items: center;
+justify-content: right;
 
-@media screen and (max-width: 768px) {
-    display:none;
-}
+
 `;
 
 export const NavBtn = styled.nav`
 display: flex;
 align-items: center;
-margin-right: 24px;
+margin-top: 1rem;
+/* margin-left: 20%; */
 
- @media screen and(max-width: 768px) {
-    display:none;
+
+ @media (min-width: 768px) {
+    
  }
 `;
 
