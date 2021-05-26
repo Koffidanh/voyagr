@@ -94,7 +94,6 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
   //   setGeoLocate(trackUserLocation = true)
   // }
 
-
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
