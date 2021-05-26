@@ -4,7 +4,7 @@ const description = [
   {
     title: 'Plan, track and document your travels!',
     description: "It's as simple as droping a pin and uploading your memories!",
-    imageUrl: '../assets/images/image1.png',
+    imageUrl: '',
     time: 1500,
   },
   {

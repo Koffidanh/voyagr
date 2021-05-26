@@ -10,7 +10,7 @@ mongoose.connect(
 const newPostsSeed = [{
     title: "Chichen Itza",
     description: "Chichén Itzá is a complex of Mayan ruins on Mexico's Yucatán Peninsula.",
-    image: "client/src/assets/images/image8.png",
+    image: "",
     latitude: 20.6843,
     longitude: 88.5678,
     visitDate: 04 / 01 / 2021,
@@ -21,7 +21,7 @@ const newPostsSeed = [{
 {
     title: "Great Wall Of China",
     description: "The Great Wall of China is a series of fortifications that were built as protection against various nomadic groups from the Eurasian Steppe.",
-    image: "client/src/assets/images/image5.png",
+    image: "",
     latitude: 40.4319,
     longitude: 116.5704,
     visitDate: 04 / 08 / 2021,
@@ -32,7 +32,7 @@ const newPostsSeed = [{
 {
     title: "Petra",
     description: "Petra is a famous archaeological site in Jordan's southwestern desert.",
-    image: "client/src/assets/images/image2.png",
+    image: "",
     latitude: 30.3285,
     longitude: 35.4444,
     visitDate: 04 / 15 / 2021,
@@ -43,7 +43,7 @@ const newPostsSeed = [{
 {
     title: "Christ The Redeemer",
     description: "Christ the Redeemer is an Art Deco statue of Jesus Christ in Rio de Janeiro, Brazil.",
-    image: "client/src/assets/images/image6.png",
+    image: "",
     latitude: 22.9519,
     longitude: 43.2105,
     visitDate: 04 / 21 / 2021,
@@ -54,7 +54,7 @@ const newPostsSeed = [{
 {
     title: "Machu Picchu",
     description: "Machu Picchu is an Incan citadel set high in the Andes Mountains in Peru, above the Urubamba River valley.",
-    image: "client/src/assets/images/image1.png",
+    image: "",
     latitude: 13.1631,
     longitude: 72.5450,
     visitDate: 04 / 28 / 2021,
@@ -65,7 +65,7 @@ const newPostsSeed = [{
 {
     title: "Colosseum",
     description: "The Colosseum, is an oval amphitheatre in the centre of the city of Rome, Italy.",
-    image: "client/src/assets/images/image3.png",
+    image: "",
     latitude: 41.8902,
     longitude: 12.4922,
     visitDate: 05 / 01 / 2021,
@@ -76,7 +76,7 @@ const newPostsSeed = [{
 {
     title: "Taj Mahal",
     description: "The Taj Mahal, originally the Rauza-i-munawwara is an ivory-white marble mausoleum on the southern bank of the river Yamuna in the Indian city of Agra.",
-    image: "client/src/assets/images/image7.png",
+    image: "",
     latitude: 27.1751,
     longitude: 78.0421,
     visitDate: 05 / 08 / 2021,
