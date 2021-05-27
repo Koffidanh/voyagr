@@ -39,25 +39,15 @@ app.get('/', (req, res) => {
 
 
 
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  })
 }
-
-
-
 app.use(session({ secret: "voyagr", resave: true, saveUninitialized: true }));
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/newPosts", { useNewUrlParser: true, useUnifiedTopology: true });
 
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Welcome to the Voyagr App!',
-  });
-});
 
 // Add routes, both API and view
 app.use(routes);
@@ -68,3 +58,7 @@ app.use(routes);
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+})
