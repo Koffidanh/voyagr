@@ -24,11 +24,6 @@ app.use(cors({
   origin: process.env.CORS_ORIGIN,
 }));
 
-app.get('/', (req, res) => {
-  res.json({
-    message: 'The World Is Your Oyster!',
-  });
-});
 
 // app.use('/api/posts', posts);
 
