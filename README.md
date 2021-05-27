@@ -35,7 +35,7 @@
     <td>Voyagr Login/ Signup Page</td>
   </tr>
   <tr>
-    <td><img src="client/public/landing.png" height=400 alt="screenshot of Voyagr landing page"></td>
+    <td><img src="client/public/landing.png" height=600 alt="screenshot of Voyagr landing page"></td>
   </tr>
    <tr>
     <td>Voyagr Popup/Post Feature</td>
