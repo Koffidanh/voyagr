@@ -5,7 +5,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const mongoose = require("mongoose");
 const middlewares = require('././middleware/middlewares');
-
+const path = require('path');
 require('dotenv').config();
 
 const routes = require("./routes");
@@ -50,7 +50,7 @@ app.use(routes);
 // app.use(middlewares.errorHandler);
 
 
-app.get('/', function (req, res) {
+app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
 
