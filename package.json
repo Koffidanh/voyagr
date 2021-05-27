@@ -23,7 +23,6 @@
   "bugs": {
     "url": "https://github.com/Kayvonk/voyagr/issues"
   },
-  "homepage": "https://github.com/Kayvonk/voyagr#readme",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
