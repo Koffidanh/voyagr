@@ -1,3 +1,5 @@
+
+const path = require('path');
 const express = require("express");
 const session = require("express-session");
 const morgan = require('morgan');
@@ -5,7 +7,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const mongoose = require("mongoose");
 const middlewares = require('././middleware/middlewares');
-const path = require('path');
+
 require('dotenv').config();
 
 const routes = require("./routes");
@@ -35,9 +37,9 @@ app.use(cors({
 
 
 
-
-app.use(express.static(path.join(__dirname, 'client/build')));
-
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
 app.use(session({ secret: "voyagr", resave: true, saveUninitialized: true }));
 
 // Connect to the Mongo DB
@@ -50,10 +52,9 @@ app.use(routes);
 // app.use(middlewares.errorHandler);
 
 
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'client/build/index.html'));
-});
-
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, './client/build/index.html'));
+})
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
