@@ -13,7 +13,7 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "homepage": "/build",
+  "homepage": "/client/build",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kayvonk/voyagr.git"
