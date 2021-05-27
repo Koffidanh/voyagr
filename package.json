@@ -10,7 +10,7 @@
     "seed": "node scripts/newPostsSeedDB.js",
     "server": "node server.js",
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install cd client"
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
