@@ -36,7 +36,7 @@ app.use(cors({
 
 
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use(session({ secret: "voyagr", resave: true, saveUninitialized: true }));
 
