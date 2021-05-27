@@ -49,7 +49,6 @@ app.use(routes);
 // app.use(middlewares.notFound);
 // app.use(middlewares.errorHandler);
 
-// Start the API server
 
 // app.get("*", (req, res) => {
 //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
