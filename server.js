@@ -26,17 +26,6 @@ app.use(cors({
   origin: process.env.CORS_ORIGIN,
 }));
 
-
-// app.use('/api/posts', posts);
-
-// Serve up static assets (usually on heroku)
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// }
-
-
-
-
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
