@@ -41,7 +41,7 @@ app.use(routes);
 // app.use(middlewares.errorHandler);
 
 
-app.get("/*", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 })
 app.listen(PORT, function () {
