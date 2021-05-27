@@ -50,10 +50,10 @@ app.use(routes);
 // app.use(middlewares.errorHandler);
 
 // Start the API server
-app.listen(PORT, function () {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-});
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 })
+app.listen(PORT, function () {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+});
