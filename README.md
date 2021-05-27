@@ -21,10 +21,10 @@
   #
   
   ## Description 
-   Voyagr is a mobile first full stack application (MERN) that features a user dashboard highlighted by a world map that enables the user to document their journey around this amazing planet with pin markers, simply put Voyagr is a digital cork board pin map.
+   Voyagr is a mobile first full stack application (MERN) that features a user dashboard highlighted by a world map that enables the user to document their journey around this amazing planet with pin markers, descriptions and photos. Simply put, Voyagr is a digital cork board pin map, social media and travel journal all in one. Adventure starts with Voyagr!
 
   ## Deployment
-  Comming Soon!
+  https://voyagrapp.herokuapp.com/
 
   ## Project URL
   https://github.com/Kayvonk/voyagr
@@ -32,10 +32,22 @@
   ## Mock-Ups
   <table>
   <tr>
-    <td>Voyagr App Dashboard</td>
+    <td>Voyagr Login/ Signup Page</td>
   </tr>
   <tr>
-    <td><img src="client/public/dashboard.png" height=400 alt="screenshot of Voyagr page"></td>
+    <td><img src="client/public/landing.png" height=400 alt="screenshot of Voyagr landing page"></td>
+  </tr>
+   <tr>
+    <td>Voyagr Popup/Post Feature</td>
+  </tr>
+   <tr>
+    <td><img src="client/public/popup.png" height=400 alt="screenshot of Voyagr popup component to make a post to map"></td>
+  </tr>
+  <tr>
+    <td>Voyagr Digial Map For Pinning Post Markers</td>
+  </tr>
+   <tr>
+    <td><img src="client/public/map.png" height=400 alt="screenshot of Voyagr dashboard map"></td>
   </tr>
  </table>
 
@@ -67,6 +79,8 @@
   * [Mapbox](https://www.mapbox.com/)
   * [React-Map-GL](https://visgl.github.io/react-map-gl/)
   * [React-Hook-Form](https://react-hook-form.com/)
+  * [Cloudinary](https://cloudinary.com/)
+  * [AuthO](https://auth0.com/)
   * [Heroku](https://www.heroku.com/)
   * [MongoDB](https://www.mongodb.com/)
   * [Passport](http://www.passportjs.org/)
