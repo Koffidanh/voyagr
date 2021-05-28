@@ -9,10 +9,9 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
-    "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "homepage": "https://voyagr-app.herokuapp.com/",
+  "homepage": "https://voyagr-app.herokuapp.com/client",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kayvonk/voyagr.git"
