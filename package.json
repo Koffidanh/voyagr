@@ -12,6 +12,7 @@
     "install": "cd client && npm install",
     "heroku-postbuild": "npm run build"
   },
+  "homepage": "https://voyagr-app.herokuapp.com/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kayvonk/voyagr.git"
