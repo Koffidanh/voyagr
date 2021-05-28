@@ -11,6 +11,14 @@ import MessageSender from "../../components/MessageSender"
 
 
 const RegisterUser = () => {
+  const [addPostLocation, setAddPostLocation] = useState(null);
+  const [viewport, setViewport] = useState({
+    width: '100vw',
+    height: '60vh',
+    latitude: 37.6,
+    longitude: -95.665,
+    zoom: 2
+  });
 
   const useStyles = makeStyles((theme) => ({
     root: {
