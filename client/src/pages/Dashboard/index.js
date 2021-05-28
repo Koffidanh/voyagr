@@ -20,10 +20,10 @@ function DashboardPage() {
       <Header
         addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport}
       />
-      {/* <Feed> */}
-      {/* <MessageSender addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport} /> */}
-      {/* <Post /> */}
-      {/* </Feed> */}
+      <Feed>
+        <MessageSender addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport} />
+        {/* <Post /> */}
+      </Feed>
     </div>
   );
 }
