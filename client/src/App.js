@@ -25,12 +25,12 @@ class App extends Component {
         cloudName={this.props.cloudName}
         uploadPreset={this.props.uploadPreset}
       >
-        <Router basename={window.location.pathname || ''}>
+        <Router>
           <Switch>
             <Route path="/" component={Landing} exact />
             <ProtectedRoute path="/dashboard" component={Dashboard} />
           </Switch>
-        </Router >
+        </Router>
       </CloudinaryContext>
     );
   }
