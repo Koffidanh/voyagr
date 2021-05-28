@@ -25,7 +25,7 @@ class App extends Component {
         cloudName={this.props.cloudName}
         uploadPreset={this.props.uploadPreset}
       >
-        <Router>
+        <Router basename={window.location.pathname || ''}>
           <Switch>
             <Route path="/" component={Landing} exact />
             <ProtectedRoute path="/dashboard" component={Dashboard} />
