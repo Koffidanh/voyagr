@@ -11,16 +11,16 @@ export default function Post(profileImage) {
     const [messages, setMessages] = usePosts();
 
     return (
-        messages
-            .map(message =>
-                <Message
-                    title={message.title}
-                    profileImage={picture}
-                    username={name}
-                    date={message.date}
-                    description={message.description}
-                    images={message.image}
-                />)
-
+        // messages
+        //     .map(message =>
+        <Message
+            title={message.title}
+            profileImage={picture}
+            username={name}
+            date={message.date}
+            description={message.description}
+            images={message.image}
+        />
+        // )
     )
 }
