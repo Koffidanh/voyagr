@@ -17,15 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kayvonk/voyagr.git"
+    "url": "git+https://github.com/Koffidanh/voyagr.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Kayvonk/voyagr/issues"
+    "url": "https://github.com/Koffidanh/voyagr/issues"
   },
-  "homepage": "https://github.com/Kayvonk/voyagr#readme",
+  "homepage": "https://github.com/Koffidanh/voyagr#readme",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
