@@ -42,7 +42,7 @@ app.get("*", function (req, res) {
 
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.REACT_APP_MONGODB_URI || "mongodb://localhost/newPosts", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/newPosts", { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 // Add routes, both API and view
