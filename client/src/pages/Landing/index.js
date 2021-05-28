@@ -7,18 +7,8 @@ import Header from '../../components/Header/Header';
 import PlacesToVisit from '../../components/About/AboutCards';
 import Footer from '../../components/Footer';
 import Image from '../../assets/images/bg.png';
-import MessageSender from "../../components/MessageSender"
-
 
 const RegisterUser = () => {
-  const [addPostLocation, setAddPostLocation] = useState(null);
-  const [viewport, setViewport] = useState({
-    width: '100vw',
-    height: '60vh',
-    latitude: 37.6,
-    longitude: -95.665,
-    zoom: 2
-  });
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,8 +23,6 @@ const RegisterUser = () => {
     <div className={classes.root}>
       <CssBaseline />
       <Header />
-      <MessageSender addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport} />
-
       <PlacesToVisit />
       <Footer />
     </div>
