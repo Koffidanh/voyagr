@@ -45,8 +45,7 @@
  } */
 
 .imageDiv {
-  border-top: 5px solid red;
-  /* #61DAFB; */
+  border-top: 5px solid #61DAFB;
 }
 
  /* @media (min-width: 360px) {
