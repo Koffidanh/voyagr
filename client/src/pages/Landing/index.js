@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
@@ -8,7 +8,20 @@ import PlacesToVisit from '../../components/About/AboutCards';
 import Footer from '../../components/Footer';
 import Image from '../../assets/images/bg.png';
 
+import Map from "../../Map"
+import MessageSender from "../../components/MessageSender"
+import Feed from "../../components/Feed";
+import Post from "../../components/Post";
+
 const RegisterUser = () => {
+  const [addPostLocation, setAddPostLocation] = useState(null);
+  const [viewport, setViewport] = useState({
+    width: '100vw',
+    height: '60vh',
+    latitude: 37.6,
+    longitude: -95.665,
+    zoom: 2
+  });
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,6 +38,11 @@ const RegisterUser = () => {
       <Header />
       <PlacesToVisit />
       <Footer />
+      <Map addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport} />
+      <Feed>
+        <MessageSender addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport} />
+        <Post />
+      </Feed>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "../../Map"
+import Map from "../../Map"
 import MessageSender from "../../components/MessageSender"
 import Feed from "../../components/Feed";
 import Post from "../../components/Post";
@@ -17,9 +17,9 @@ function DashboardPage() {
     <div
       style={{ backgroundColor: "lightgray" }}
     >
-      {/* <Header addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport} /> */}
+      <Map addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport} />
       <Feed>
-        {/* <MessageSender addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport} /> */}
+        <MessageSender addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport} />
         <Post />
       </Feed>
     </div>
