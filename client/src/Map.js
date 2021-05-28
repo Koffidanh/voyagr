@@ -21,7 +21,7 @@ import "react-multi-carousel/lib/styles.css";
 var moment = require('moment');
 
 
-export const Map = ({ addPostLocation, setAddPostLocation, viewport, setViewport, images }) => {
+export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewport, images }) => {
   const { user } = useAuth0();
   const { name, picture, sub } = user;
   const userID = sub;
@@ -318,4 +318,4 @@ export const Map = ({ addPostLocation, setAddPostLocation, viewport, setViewport
   )
 }
 
-export default Map;
+export default Header;
