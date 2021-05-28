@@ -28,7 +28,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route path="/" component={Landing} exact />
-            <Route path="/dashboard" component={Dashboard} exact />
+            <ProtectedRoute path="/dashboard" component={Dashboard} exact />
           </Switch>
         </Router >
       </CloudinaryContext>
