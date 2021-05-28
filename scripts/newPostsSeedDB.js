@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 mongoose.connect(
-    process.env.MONGODB_URI ||
+    process.env.REACT_APP_MONGODB_URI ||
     "mongodb://localhost/newPosts"
 );
 
