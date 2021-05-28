@@ -27,89 +27,89 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
   const userID = sub;
   const [input, setInput] = useState({});
 
-  // const [geoLocate, setGeoLocate] = useState("");
-  // const [newPosts, setNewPosts] = usePosts();
-  // const [showPopup, setShowPopup] = useState({});
-  // const [posts, setPosts] = usePosts();
-  // const [image, setImage] = useState([]);
+  const [geoLocate, setGeoLocate] = useState("");
+  const [newPosts, setNewPosts] = usePosts();
+  const [showPopup, setShowPopup] = useState({});
+  const [posts, setPosts] = usePosts();
+  const [image, setImage] = useState([]);
 
-  // const geocoderContainerRef = useRef();
-  // const geolocateControlRef = useRef();
-  // const mapRef = useRef();
-  // const handleViewportChange = useCallback(
-  //   (newViewport) => setViewport(newViewport),
-  //   []
-  // );
-  // const geolocateControlStyle = {
-  //   right: 30,
-  //   top: 15
-  // };
+  const geocoderContainerRef = useRef();
+  const geolocateControlRef = useRef();
+  const mapRef = useRef();
+  const handleViewportChange = useCallback(
+    (newViewport) => setViewport(newViewport),
+    []
+  );
+  const geolocateControlStyle = {
+    right: 30,
+    top: 15
+  };
 
-  // const showAddMarkerPopup = (event) => {
-  //   const [longitude, latitude] = event.lngLat;
-  //   setAddPostLocation({ latitude, longitude });
-  // };
+  const showAddMarkerPopup = (event) => {
+    const [longitude, latitude] = event.lngLat;
+    setAddPostLocation({ latitude, longitude });
+  };
 
-  // const handleGeocoderViewportChange = useCallback(
-  //   (newViewport) => {
-  //     const geocoderDefaultOverrides = { transitionDuration: 1000 };
-  //     return handleViewportChange({
-  //       ...newViewport,
-  //       ...geocoderDefaultOverrides
-  //     });
-  //   },
-  //   [handleViewportChange]
-  // );
+  const handleGeocoderViewportChange = useCallback(
+    (newViewport) => {
+      const geocoderDefaultOverrides = { transitionDuration: 1000 };
+      return handleViewportChange({
+        ...newViewport,
+        ...geocoderDefaultOverrides
+      });
+    },
+    [handleViewportChange]
+  );
 
-  // let timestamp = Date.now()
-  // var now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+  let timestamp = Date.now()
+  var now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
 
-  // function handleChange(event) {
+  function handleChange(event) {
 
-  //   const { value } = event.target
-  //   setInput({ ...input, [event.target.name]: value })
-  // }
+    const { value } = event.target
+    setInput({ ...input, [event.target.name]: value })
+  }
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setInput({ title: "", description: "", image: "", visitDate: "" })
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setInput({ title: "", description: "", image: "", visitDate: "" })
 
-  //   const newPost = {
-  //     title: input.title,
-  //     description: input.description,
-  //     image: image,
-  //     latitude: parseFloat(addPostLocation.latitude),
-  //     longitude: parseFloat(addPostLocation.longitude),
-  //     visitDate: input.visitDate,
-  //     userID: userID,
-  //     date: now,
-  //     timestamp: timestamp
-  //   }
-  //   console.log(newPost);
-  //   API.savePost(newPost).catch(e => console.log(e))
-  //   setNewPosts((newPosts) => [newPost, ...newPosts])
-  // }
+    const newPost = {
+      title: input.title,
+      description: input.description,
+      image: image,
+      latitude: parseFloat(addPostLocation.latitude),
+      longitude: parseFloat(addPostLocation.longitude),
+      visitDate: input.visitDate,
+      userID: userID,
+      date: now,
+      timestamp: timestamp
+    }
+    console.log(newPost);
+    API.savePost(newPost).catch(e => console.log(e))
+    setNewPosts((newPosts) => [newPost, ...newPosts])
+  }
 
 
-  // const responsive = {
-  //   superLargeDesktop: {
-  //     // the naming can be any, depends on you.
-  //     breakpoint: { max: 4000, min: 3000 },
-  //     items: 5
-  //   },
-  //   desktop: {
-  //     breakpoint: { max: 3000, min: 1024 },
-  //     items: 3
-  //   },
-  //   tablet: {
-  //     breakpoint: { max: 1024, min: 464 },
-  //     items: 2
-  //   },
-  //   mobile: {
-  //     breakpoint: { max: 464, min: 0 },
-  //     items: 1
-  //   }
-  // };
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
 
   return (
     <>
@@ -121,17 +121,17 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
           className="voyagr-logo"
           alt="Voyagr logo"
         />
-        {/* <NavMenu>
+        <NavMenu>
 
           <div
             ref={geocoderContainerRef}
             style={{ position: "relative", right: 100 }}
           />
 
-        </NavMenu> */}
+        </NavMenu>
         <BurgerMenu />
       </Nav>
-      {/* <ReactMapGL
+      <ReactMapGL
         ref={mapRef}
         {...viewport}
         width="100vw" height="60vh" onViewportChange={setViewport}
@@ -288,7 +288,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
             </>
           ) : null
         }
-      </ReactMapGL> */}
+      </ReactMapGL>
       <ProfileImage
         avatarImage={picture}
       />
