@@ -125,22 +125,12 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
           alt="Voyagr logo"
         />
         <NavMenu>
-          {/* <div>
-            <button className="geoLocater" ref={geolocateControlRef}>My Current Location</button>
-          </div> */}
+
           <div
             ref={geocoderContainerRef}
             style={{ position: "relative", right: 100 }}
           />
-          {/* <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
-            <FontAwesomeIcon icon={faHome} size="lg" />
-          </NavLink>
-          <NavLink to="/" exact activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
-            <FontAwesomeIcon icon={faUserFriends} size="lg" />
-          </NavLink>
-          <NavLink to="/" exact activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
-            <FontAwesomeIcon icon={faCog} size="lg" />
-          </NavLink> */}
+
         </NavMenu>
         <BurgerMenu />
       </Nav>
@@ -154,8 +144,8 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
         onViewportChange={nextViewport => setViewport(nextViewport)}
         onClick={showAddMarkerPopup}
         transitionDuration="200"
-      >
-        <GeolocateControl
+      />
+      {/* <GeolocateControl
           style={geolocateControlStyle}
           containerRef={geolocateControlRef}
           positionOptions={{ enableHighAccuracy: true }}
@@ -214,9 +204,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
                       <p> {post.latitude.toFixed(2)}, {post.longitude.toFixed(2)} </p>
 
                       <small>Visited on: {new Date(post.visitDate).toLocaleDateString()}</small>
-                      {/* {post.image && <img src={post.image} alt={post.title} />} */}
-                      {/* {JSON.stringify(post)} */}
-                      <Carousel
+                                  <Carousel
                         swipeable={true}
                         draggable={false}
                         showDots={true}
@@ -294,11 +282,6 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
                       name="visitDate"
                       value={input.visitDate}
                     />
-
-
-                    {/* <input placeholder="Date" class="textbox-n" onBlue="(this.type = 'text')" onFocus="(this.type = 'date')" id="date" name="visitDate" value={input.visitDate}></input> */}
-
-                    {/* <input name="visitDate" type="date" value={input.visitDate} onChange={handleChange} /> */}
                     <input type="submit" value="Submit" />
                   </form>
                 </div>
@@ -306,7 +289,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
             </>
           ) : null
         }
-      </ReactMapGL>
+      </ReactMapGL> */}
       <ProfileImage
         avatarImage={picture}
       />

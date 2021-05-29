@@ -30,13 +30,6 @@ app.use(cors({
 app.use(session({ secret: "voyagr", resave: true, saveUninitialized: true }));
 
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-app.use(routes);
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
 
 
 
@@ -44,6 +37,13 @@ app.get("*", function (req, res) {
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/newPosts", { useNewUrlParser: true, useUnifiedTopology: true });
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+app.use(routes);
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 // Add routes, both API and view
 // app.use(middlewares.notFound);
