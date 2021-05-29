@@ -17,12 +17,10 @@ function DashboardPage() {
     <div
       style={{ backgroundColor: "lightgray" }}
     >
-      <Header
-        addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport}
-      />
+      <Header addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport} />
       <Feed>
         <MessageSender addPostLocation={addPostLocation} setAddPostLocation={setAddPostLocation} viewport={viewport} setViewport={setViewport} />
-        {/* <Post /> */}
+        <Post />
       </Feed>
     </div>
   );

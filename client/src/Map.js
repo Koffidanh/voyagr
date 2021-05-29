@@ -26,8 +26,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
   const { name, picture, sub } = user;
   const userID = sub;
   const [input, setInput] = useState({});
-
-  const [geoLocate, setGeoLocate] = useState("");
+  // const [geoLocate, setGeoLocate] = useState("");
   const [newPosts, setNewPosts] = usePosts();
   const [showPopup, setShowPopup] = useState({});
   const [posts, setPosts] = usePosts();
@@ -89,7 +88,11 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
     API.savePost(newPost).catch(e => console.log(e))
     setNewPosts((newPosts) => [newPost, ...newPosts])
   }
-
+  // useEffect(() => console.log(viewport), [viewport])
+  // function geolocateToggle(e) {
+  //   e.preventDefault;
+  //   setGeoLocate(trackUserLocation = true)
+  // }
 
   const responsive = {
     superLargeDesktop: {
@@ -122,12 +125,22 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
           alt="Voyagr logo"
         />
         <NavMenu>
-
+          {/* <div>
+            <button className="geoLocater" ref={geolocateControlRef}>My Current Location</button>
+          </div> */}
           <div
             ref={geocoderContainerRef}
             style={{ position: "relative", right: 100 }}
           />
-
+          {/* <NavLink to="/dashboard" activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
+            <FontAwesomeIcon icon={faHome} size="lg" />
+          </NavLink>
+          <NavLink to="/" exact activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
+            <FontAwesomeIcon icon={faUserFriends} size="lg" />
+          </NavLink>
+          <NavLink to="/" exact activeStyle={{ textDecoration: "none", color: "#61DAFB" }}>
+            <FontAwesomeIcon icon={faCog} size="lg" />
+          </NavLink> */}
         </NavMenu>
         <BurgerMenu />
       </Nav>
@@ -156,7 +169,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
           placeholder="Find Your Destination"
         />
-        {/* {
+        {
           newPosts.map(post => (
             <React.Fragment key={post._id}>
               <Marker
@@ -201,6 +214,8 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
                       <p> {post.latitude.toFixed(2)}, {post.longitude.toFixed(2)} </p>
 
                       <small>Visited on: {new Date(post.visitDate).toLocaleDateString()}</small>
+                      {/* {post.image && <img src={post.image} alt={post.title} />} */}
+                      {/* {JSON.stringify(post)} */}
                       <Carousel
                         swipeable={true}
                         draggable={false}
@@ -281,13 +296,16 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
                     />
 
 
+                    {/* <input placeholder="Date" class="textbox-n" onBlue="(this.type = 'text')" onFocus="(this.type = 'date')" id="date" name="visitDate" value={input.visitDate}></input> */}
+
+                    {/* <input name="visitDate" type="date" value={input.visitDate} onChange={handleChange} /> */}
                     <input type="submit" value="Submit" />
                   </form>
                 </div>
               </Popup>
             </>
           ) : null
-        } */}
+        }
       </ReactMapGL>
       <ProfileImage
         avatarImage={picture}

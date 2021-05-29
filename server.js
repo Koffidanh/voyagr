@@ -42,9 +42,7 @@ app.get("*", function (req, res) {
 
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/newPosts", { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("connected to mongodb.."))
-  .catch(err => console.error("could not connect to mongodb", err));
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/newPosts", { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 // Add routes, both API and view

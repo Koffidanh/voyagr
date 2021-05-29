@@ -21,5 +21,6 @@ export default function Post(profileImage) {
                     description={message.description}
                     images={message.image}
                 />)
+
     )
 }
