@@ -144,22 +144,22 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
         onViewportChange={nextViewport => setViewport(nextViewport)}
         onClick={showAddMarkerPopup}
         transitionDuration="200"
-      />
-      <GeolocateControl
-        style={geolocateControlStyle}
-        containerRef={geolocateControlRef}
-        positionOptions={{ enableHighAccuracy: true }}
-        trackUserLocation={true}
-      // auto
-      />
-      <Geocoder
-        mapRef={mapRef}
-        containerRef={geocoderContainerRef}
-        onViewportChange={handleGeocoderViewportChange}
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-        placeholder="Find Your Destination"
-      />
-      {/* {
+      >
+        <GeolocateControl
+          style={geolocateControlStyle}
+          containerRef={geolocateControlRef}
+          positionOptions={{ enableHighAccuracy: true }}
+          trackUserLocation={true}
+        // auto
+        />
+        <Geocoder
+          mapRef={mapRef}
+          containerRef={geocoderContainerRef}
+          onViewportChange={handleGeocoderViewportChange}
+          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+          placeholder="Find Your Destination"
+        />
+        {
           newPosts.map(post => (
             <React.Fragment key={post._id}>
               <Marker
@@ -289,7 +289,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
             </>
           ) : null
         }
-      </ReactMapGL> */}
+      </ReactMapGL>
       <ProfileImage
         avatarImage={picture}
       />
