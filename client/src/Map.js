@@ -145,21 +145,21 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
         onClick={showAddMarkerPopup}
         transitionDuration="200"
       />
-      {/* <GeolocateControl
-          style={geolocateControlStyle}
-          containerRef={geolocateControlRef}
-          positionOptions={{ enableHighAccuracy: true }}
-          trackUserLocation={true}
-        // auto
-        />
-        <Geocoder
-          mapRef={mapRef}
-          containerRef={geocoderContainerRef}
-          onViewportChange={handleGeocoderViewportChange}
-          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-          placeholder="Find Your Destination"
-        />
-        {
+      <GeolocateControl
+        style={geolocateControlStyle}
+        containerRef={geolocateControlRef}
+        positionOptions={{ enableHighAccuracy: true }}
+        trackUserLocation={true}
+      // auto
+      />
+      <Geocoder
+        mapRef={mapRef}
+        containerRef={geocoderContainerRef}
+        onViewportChange={handleGeocoderViewportChange}
+        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        placeholder="Find Your Destination"
+      />
+      {/* {
           newPosts.map(post => (
             <React.Fragment key={post._id}>
               <Marker
@@ -204,7 +204,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
                       <p> {post.latitude.toFixed(2)}, {post.longitude.toFixed(2)} </p>
 
                       <small>Visited on: {new Date(post.visitDate).toLocaleDateString()}</small>
-                                  <Carousel
+                      <Carousel
                         swipeable={true}
                         draggable={false}
                         showDots={true}
