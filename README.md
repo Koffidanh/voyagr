@@ -24,7 +24,7 @@
    Voyagr is a mobile first full stack application (MERN) that features a user dashboard highlighted by a world map that enables the user to document their journey around this amazing planet with pin markers, descriptions and photos. Simply put, Voyagr is a digital cork board pin map, social media and travel journal all in one. Adventure starts with Voyagr!
 
   ## Deployment
-  https://voyagrapp.herokuapp.com/
+  https://voyagr-app.netlify.app
 
   ## Project URL
   https://github.com/Kayvonk/voyagr
