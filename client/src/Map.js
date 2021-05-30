@@ -3,6 +3,7 @@ import PhotoListContainer from "./components/PhotoList";
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl';
+// import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
 import { Nav, NavMenu } from "./NavbarElements"
 import BurgerMenu from "./components/Dropdown"
@@ -19,6 +20,7 @@ import { usePosts } from './Contexts/PostContexts';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 var moment = require('moment');
+
 
 
 export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewport, images }) => {
@@ -270,18 +272,7 @@ export const Header = ({ addPostLocation, setAddPostLocation, viewport, setViewp
                       />
                     </div>
                     <label htmlFor="visitDate">Visit Date</label>
-                    <input
-                      type="text"
-                      onFocus={
-                        (e) => {
-                          e.currentTarget.type = "date";
-                          e.currentTarget.focus();
-                        }
-                      }
-                      placeholder="Date"
-                      name="visitDate"
-                      value={input.visitDate}
-                    />
+                    <input name="visitDate" type="date" value={input.visitDate} onChange={handleChange} />
                     <input type="submit" value="Submit" />
                   </form>
                 </div>

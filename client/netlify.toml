@@ -1,4 +1,4 @@
-[build]	
-  base = "client/"
-  command = "echo 'default context'"
-  publish = "build"
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
